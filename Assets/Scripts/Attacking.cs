@@ -30,21 +30,25 @@ public class Attacking : MonoBehaviour
     {
         if (attackCooldown >= 3)
         {
-            if (Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Mouse0))
             {
                 trans.position = new Vector2(1,10);
+                attackCooldown = 0f;
             }
-            if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Mouse0))
             {
-
+                trans.position = new Vector2(-1, 0);
+                attackCooldown = 0f;
             }
-            if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
             {
-
+                trans.position = new Vector2(0, 10);
+                attackCooldown = 0f;
             }
-            if (Input.GetKeyDown(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
             {
-
+                trans.position = new Vector2(0, 0);
+                attackCooldown = 0f;
             }
         }
     }
