@@ -174,13 +174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 6
   feetPos: {fileID: 6239388680972138602}
   checkRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  jumpTime: 0.5
+  jumpTime: 0.6
   isJumping: 0
 --- !u!114 &9056061142858280023
 MonoBehaviour:
@@ -195,3 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iFrames: 60
+  tanks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullTank: {fileID: 21300000, guid: 4741345b2a4df05498ef5d7f43479054, type: 3}
+  emptyTank: {fileID: 21300000, guid: 495225ddf0f1fc94aa97d6cea3c06198, type: 3}

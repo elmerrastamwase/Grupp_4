@@ -931,11 +931,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jelly
       objectReference: {fileID: 0}
-    - target: {fileID: 807775466757736086, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -991,21 +986,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.039
-      objectReference: {fileID: 0}
     - target: {fileID: 807775466757736087, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1496159887}
-    - target: {fileID: 5648797814602283034, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176d2663bea2a6649ba27455b11d5c53, type: 3}
 --- !u!1001 &6239388680591512095
@@ -1075,21 +1060,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6239388682087662735, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-        type: 3}
-      propertyPath: jumpTime
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239388682087662735, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-        type: 3}
-      propertyPath: jumpForce
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9056061142858280023, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-        type: 3}
-      propertyPath: tanks.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 9056061142858280023, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: tanks.Array.data[0]
@@ -1110,18 +1080,6 @@ PrefabInstance:
       propertyPath: tanks.Array.data[3]
       value: 
       objectReference: {fileID: 1047667686}
-    - target: {fileID: 9056061142858280023, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-        type: 3}
-      propertyPath: fullTank
-      value: 
-      objectReference: {fileID: 21300000, guid: 4741345b2a4df05498ef5d7f43479054,
-        type: 3}
-    - target: {fileID: 9056061142858280023, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-        type: 3}
-      propertyPath: emptyTank
-      value: 
-      objectReference: {fileID: 21300000, guid: 495225ddf0f1fc94aa97d6cea3c06198,
-        type: 3}
     - target: {fileID: 9056061142858280023, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: tanks.Array.data[4]
