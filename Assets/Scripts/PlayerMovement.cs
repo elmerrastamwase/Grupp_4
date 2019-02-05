@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int moveSpeed = 5;
-    public float jumpForce = 6;
+    public float jumpForce = 10;
     public Transform feetPos;
     public float checkRadius = 0.5f;
     public LayerMask whatIsGround;
