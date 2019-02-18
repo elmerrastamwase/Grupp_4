@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime = 0.6f;
     public bool isJumping;
 
+   
+
     private bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
