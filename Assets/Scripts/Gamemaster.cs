@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Gamemaster : MonoBehaviour
 {
-    private static Gamemaster Level;
+    private static Gamemaster instance;
+    public Vector2 lastCheckPointPos;
 
-    void Awake()
+    private void Awake()
     {
-        if (Level == null)
+        if (instance == null)
         {
-            Level = this;
-            DontDestroyOnLoad(Level);
+            instance = this;
+            DontDestroyOnLoad(instance);
         }
         else
         {
