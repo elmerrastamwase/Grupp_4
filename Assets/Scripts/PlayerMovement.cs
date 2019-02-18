@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
-        { 
+        {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
@@ -67,6 +65,5 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-        
     }
 }
