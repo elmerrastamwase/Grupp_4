@@ -319,9 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashtime: 0
-  dashspeed: 5
-  startdashtime: 1
-  coldown: 0
+  dashspeed: 10
+  startdashtime: 0.2
+  coldown: 2
 --- !u!1001 &1017518903
 PrefabInstance:
   m_ObjectHideFlags: 0
