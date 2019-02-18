@@ -26,7 +26,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rbody.velocity.y);
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.A))
+        { 
+            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
