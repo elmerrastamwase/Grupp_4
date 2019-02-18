@@ -7,6 +7,8 @@ public class Attacking : MonoBehaviour
     void Start()
     {
         trans = GetComponent<Transform>();
+
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -14,47 +16,47 @@ public class Attacking : MonoBehaviour
         attackCooldown += Time.deltaTime;
 
         AttackScript();
+
+        WeaponToPlayer();
     }
 
-    public int attackSpeed;
     public Transform trans;
 
     public float attackCooldown;
     public int attackDamage;
 
-
-    public int SwingSpeed = 5;
+    public GameObject player;
+    public Vector3 Offset = new Vector3(0.5f, 0, 0);
 
     public void AttackScript()
     {
-
-        if (attackCooldown >= 3)
+        if (attackCooldown >= 0.5f)
         {
-            Vector2 from = new Vector2(5.5f, 1.5f);
-            Vector2 to = new Vector2(-4.5f, -2.5f);
-
-            float angle = Vector2.Angle(from, to);
-            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
             if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Mouse0))
             {
-                trans.localRotation = Quaternion.Lerp(transform.rotation, rotation, SwingSpeed * Time.deltaTime);
+                trans.eulerAngles = new Vector3(0, 0, 0);
+                attackCooldown = 0;
             }
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Mouse0))
             {
-                trans.position = new Vector2(-1, 0);
-                attackCooldown = 0f;
+                trans.eulerAngles = new Vector3(0, 0, -180);
+                attackCooldown = 0;
             }
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
             {
-                trans.position = new Vector2(0, 10);
-                attackCooldown = 0f;
+                trans.eulerAngles = new Vector3(0, 0, 90);
+                attackCooldown = 0;
             }
             if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
             {
-                trans.position = new Vector2(0, 0);
-                attackCooldown = 0f;
+                trans.eulerAngles = new Vector3(0, 0, -90);
+                attackCooldown = 0;
             }
         }
+    }
+
+    public void WeaponToPlayer()
+    {
+        trans.position = player.transform.position + Offset;
     }
 }

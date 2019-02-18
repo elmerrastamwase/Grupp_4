@@ -206,10 +206,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6239388682087662740, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6239388682087662736, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.505
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 6239388682087662736, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
@@ -261,6 +266,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6239388682087662739, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239388680972138602, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.505
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239388680972138603, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e11e55c8b312b4f88cb1f91e546ba1, type: 3}
 --- !u!1 &1530928550
@@ -299,7 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530928550}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -317,10 +337,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1556339769}
   - component: {fileID: 1556339768}
-  - component: {fileID: 1556339771}
   - component: {fileID: 1556339770}
-  m_Layer: 0
-  m_Name: Square
+  - component: {fileID: 1556339771}
+  m_Layer: 11
+  m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,9 +401,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556339767}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0000002980232, w: 1}
-  m_LocalPosition: {x: -5.008, y: -2.19, z: 0}
-  m_LocalScale: {x: 1.3211817, y: 0.38149023, z: 0.3814902}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0000001490116, w: 1}
+  m_LocalPosition: {x: -5.1, y: -2.19, z: 0}
+  m_LocalScale: {x: 1.3, y: 0.3, z: 0.3814902}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -400,11 +420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2672555165eecf4ab5ae0d43c9ad055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 0
   trans: {fileID: 0}
   attackCooldown: 0
   attackDamage: 0
-  SwingSpeed: 5
+  player: {fileID: 0}
+  Offset: {x: 0.45, y: 0, z: 0}
 --- !u!61 &1556339771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,6 +451,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1626646893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6239388682087662740, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1215964438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626646900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626646893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1ad5d09cd77c244bc635edf016374b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!1 &1672097718
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,20 +526,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1672097722}
     m_ColliderPaths:
-    - - X: -90000000
+    - - X: -85000000
         Y: -40000000
-      - X: 90000000
+      - X: 95000000
         Y: -40000000
-      - X: 90000000
+      - X: 95000000
         Y: -30000000
-      - X: -90000000
+      - X: -85000000
         Y: -30000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9, y: -3}
-      - {x: -9, y: -3}
-      - {x: -9, y: -4}
-      - {x: 9, y: -4}
+    - - {x: 9.5, y: -3}
+      - {x: -8.5, y: -3}
+      - {x: -8.5, y: -4}
+      - {x: 9.5, y: -4}
   m_VertexDistance: 0.0005
 --- !u!50 &1672097721
 Rigidbody2D:
