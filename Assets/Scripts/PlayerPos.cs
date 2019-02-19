@@ -14,7 +14,7 @@ public class PlayerPos : MonoBehaviour
         transform.position = gm.lastCheckPointPos;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
