@@ -65,18 +65,15 @@ public class Attacking : MonoBehaviour
 
     public void WeaponToPlayer()
     {
-
         if (Input.GetKey(KeyCode.A))
         {
-            trans.position = player.transform.position + Offset1;
+            trans.position = player.transform.position + Offset0;
         }
         else
         {
             trans.position = player.transform.position + Offset0;
         }
     }
-
     private Vector3 Offset0 = new Vector3(0.5f, 0, 0);
-    private Vector3 Offset1 = new Vector3(-1, 0, 0);
 }
 
