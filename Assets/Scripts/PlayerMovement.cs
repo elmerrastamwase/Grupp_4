@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,9 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime = 0.6f;
     public bool isJumping;
 
-   
-
-    private bool isGrounded;
+    public bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
 
@@ -26,18 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-
+        rbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rbody.velocity.y);
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -67,5 +56,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
+        
     }
 }

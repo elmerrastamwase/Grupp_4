@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 6239388680972138602, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6239388680972138603, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
@@ -1334,7 +1334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556339767}
   m_LocalRotation: {x: -0, y: -0, z: -0.0000001490116, w: 1}
-  m_LocalPosition: {x: -5.5, y: -2.19, z: 0}
+  m_LocalPosition: {x: -5.5, y: -2.25, z: 0}
   m_LocalScale: {x: 1.3, y: 0.3, z: 0.3814902}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1400,6 +1400,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
+--- !u!1 &1876487447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 166466804063852320, guid: a85f42c1aa8103540ac25f2f4a8c7c44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1336818302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1876487448
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876487447}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3294710998764997838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1470,11 +1497,6 @@ PrefabInstance:
     - target: {fileID: 5684948599179955280, guid: a85f42c1aa8103540ac25f2f4a8c7c44,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 439748250577221835, guid: a85f42c1aa8103540ac25f2f4a8c7c44,
-        type: 3}
-      propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8341020091256852063, guid: a85f42c1aa8103540ac25f2f4a8c7c44,
@@ -1953,6 +1975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[17].second.m_ColliderType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439748250577221835, guid: a85f42c1aa8103540ac25f2f4a8c7c44,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85f42c1aa8103540ac25f2f4a8c7c44, type: 3}
