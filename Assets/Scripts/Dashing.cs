@@ -7,31 +7,61 @@ public class Dashing : MonoBehaviour
 
 
     private Rigidbody2D rbody;
-    public float dashtime;
-    public float dashspeed;
-    public float startdashtime = 1f;
-    public float coldown = 0;
-    private int direction;
-    public int dashcharges = 1;
-    
+    public float dashTime;
+    public float dashSpeed;
+    public float dashTimer;
+    public float cooldownLeft = 0;
+    public static float cooldown = 0.5f;
+    public static bool hasAirdash;
+    public static bool isDashing;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        dashtime = startdashtime;
-        rbody.velocity = Vector2.zero;
-
     }
 
     void Update()
     {
-
-        if (coldown >= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            coldown -= Time.deltaTime;
+            if (cooldownLeft == 0)
+            {
+                if (PlayerMovement.isGrounded == false)
+                {
+                    if(hasAirdash == true)
+                    {
+                        cooldownLeft = cooldown;
+                        dashTimer = 0.3f;
+                        hasAirdash = false;
+                    }
+                } else {
+                cooldownLeft = cooldown;
+                dashTimer = 0.3f;
+                }
+            }
         }
-        if (coldown <= 0)
+
+        if (dashTimer > 0)
         {
-            coldown = 0;
+            rbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+            transform.Translate(dashSpeed * Time.deltaTime, 0, 0);
+            dashTimer -= Time.deltaTime;
+            isDashing = true;
+        }
+        else
+        {
+            dashTimer = 0;
+            rbody.constraints = RigidbodyConstraints2D.None;
+            isDashing = false;
+        }
+
+        if (cooldownLeft >= 0)
+        {
+            cooldownLeft -= Time.deltaTime;
+        }
+        if (cooldownLeft <= 0)
+        {
+            cooldownLeft = 0;
         }
 
     }
