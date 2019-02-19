@@ -27,6 +27,8 @@ public class Attacking : MonoBehaviour
 
     public GameObject player;
 
+
+
     public void AttackScript()
     {
         if (attackCooldown >= 0.5f)
