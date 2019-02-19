@@ -20,32 +20,40 @@ public class Attacking : MonoBehaviour
         WeaponToPlayer();
     }
 
-    public Transform trans;
+    private Transform trans;
 
     public float attackCooldown;
     public int attackDamage;
 
     public GameObject player;
-    public Vector3 Offset = new Vector3(0.5f, 0, 0);
 
     public void AttackScript()
     {
         if (attackCooldown >= 0.5f)
         {
-            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.D))
             {
-                trans.eulerAngles = new Vector3(0, 0, 0);
-                attackCooldown = 0;
+                trans.rotation = Quaternion.Euler(0, 0, 0);
+
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    trans.eulerAngles = new Vector3(0, 0, 0);
+                    attackCooldown = 0;
+                }
             }
-            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.A))
             {
-                trans.eulerAngles = new Vector3(0, 0, -180);
-                attackCooldown = 0;
+                trans.rotation = Quaternion.Euler(0, 180, 0);
+
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    attackCooldown = 0;
+                }
             }
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
             {
-                trans.eulerAngles = new Vector3(0, 0, 90);
                 attackCooldown = 0;
+                trans.eulerAngles = new Vector3(0, 0, 90);
             }
             if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
             {
@@ -57,6 +65,18 @@ public class Attacking : MonoBehaviour
 
     public void WeaponToPlayer()
     {
-        trans.position = player.transform.position + Offset;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            trans.position = player.transform.position + Offset1;
+        }
+        else
+        {
+            trans.position = player.transform.position + Offset0;
+        }
     }
+
+    private Vector3 Offset0 = new Vector3(0.5f, 0, 0);
+    private Vector3 Offset1 = new Vector3(-1, 0, 0);
 }
+
