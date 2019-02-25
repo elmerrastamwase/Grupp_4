@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6239388682087662735}
   - component: {fileID: 9056061142858280023}
   - component: {fileID: 3777616480695171558}
+  - component: {fileID: 578423044}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -175,13 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 8
   feetPos: {fileID: 6239388680972138602}
   checkRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  jumpTime: 0.5
+  jumpTime: 0.3
   isJumping: 0
 --- !u!114 &9056061142858280023
 MonoBehaviour:
@@ -196,9 +197,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iFrames: 60
-  tanks: []
-  fullTank: {fileID: 0}
-  emptyTank: {fileID: 0}
+  tanks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullTank: {fileID: 21300000, guid: 9f5f76d448279ec449565d4eaeef1598, type: 3}
+  emptyTank: {fileID: 21300000, guid: 495225ddf0f1fc94aa97d6cea3c06198, type: 3}
 --- !u!114 &3777616480695171558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,3 +217,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f4a29ff14ac8641b59a31b6f50c86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &578423044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239388682087662740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62d8b081bc97bb499e552c9b3297407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashTime: 0
+  dashSpeed: 10
+  dashTimer: 0
+  cooldownLeft: 0

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime = 0.6f;
     public bool isJumping;
 
-    public bool isGrounded;
+   
+
+    public static bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
 
@@ -26,7 +26,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rbody.velocity.y);
+        if (Dashing.isDashing == false)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
+
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -39,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpTimeTimer = jumpTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
+            Dashing.hasAirdash = true;
         }
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {
@@ -56,6 +70,5 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-        
     }
 }
