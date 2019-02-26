@@ -61,8 +61,11 @@ public class Attacking : MonoBehaviour
                 attackCooldown = 0;
                 trans.eulerAngles = new Vector3(0, 0, 90);
             }
+
+            GameObject playerScripts = GameObject.FindWithTag("Player");
+            bool isGrounded = playerScripts.GetComponentInParent<PlayerMovement>().isGrounded;
             
-            if (PlayerMovement.isGrounded == false)
+            if (isGrounded == false)
             {
                 if (Input.GetKey(KeyCode.S))
                 {
