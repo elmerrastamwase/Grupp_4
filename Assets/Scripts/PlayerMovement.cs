@@ -16,17 +16,21 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
         GetComponent<Rigidbody2D>().freezeRotation = true;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Dashing.isDashing == false)
+        animations();
+            if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -43,6 +47,29 @@ public class PlayerMovement : MonoBehaviour
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    }
+
+    public void animations()
+    {
+        if (rbody.velocity.y < -0.1)
+        {
+            anim.SetBool("isFalling", true);
+        } else {
+            anim.SetBool("isFalling", false);
+        }
+        if (rbody.velocity.y > -0.1)
+        {
+            anim.SetBool("isJumpingUp", true);
+        }
+        else
+        {
+            anim.SetBool("isJumpingUp", false);
+        }
+        if(isGrounded == true)
+        {
+            anim.SetBool("isJumpingUp", false);
+            anim.SetBool("isFalling", false);
+        }
     }
 
     public void jumpScript()
