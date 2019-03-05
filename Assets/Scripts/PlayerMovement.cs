@@ -20,12 +20,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Rigidbody2D>().freezeRotation = true;
+
         if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
