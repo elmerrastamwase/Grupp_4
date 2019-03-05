@@ -12,19 +12,25 @@ public class GroundEnemyMove : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
     }
-    
-    void Update()
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isRight == true)
+        if (collision.tag == "Player")
         {
-            rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
+            
         }
         else
         {
-            rbody.velocity = new Vector2(movementSpeed, rbody.velocity.y);
+            if (isRight == true)
+            {
+                rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
+            }
+            else
+            {
+                rbody.velocity = new Vector2(movementSpeed, rbody.velocity.y);
+            }
         }
     }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "EndOfPlatform")
