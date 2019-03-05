@@ -22,13 +22,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().freezeRotation = true;
         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Rigidbody2D>().freezeRotation = true;
+
         animations();
             if (Dashing.isDashing == false)
         {
