@@ -21,6 +21,11 @@ public class PlayerHP : MonoBehaviour
             playerHp = maxPlayerHp;
         }
 
+        if (playerHp <= 0)
+        {
+
+        }
+
         if (hasIFrames == true)
         {
             iFrames -= 1;
