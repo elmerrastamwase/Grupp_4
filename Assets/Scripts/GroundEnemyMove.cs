@@ -17,10 +17,12 @@ public class GroundEnemyMove : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            
+            movementSpeed = 0f;
+            rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
         }
         else
         {
+            movementSpeed = 2f;
             if (isRight == true)
             {
                 rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
