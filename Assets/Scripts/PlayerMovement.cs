@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().freezeRotation = true;
 
         animations();
-            if (Dashing.isDashing == false)
+        if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -44,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
+
+        Attacking.playerXPos = transform.position.x;
 
         jumpScript();
 
