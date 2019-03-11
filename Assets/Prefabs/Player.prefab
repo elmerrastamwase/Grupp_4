@@ -119,13 +119,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2672555165eecf4ab5ae0d43c9ad055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
   attackCooldown: 0
   attackDamage: 0
   attackState: 0
-  player: {fileID: 0}
+  player: {fileID: 6239388682087662740}
+  rbody: {fileID: 6239388682087662738}
   Offset: {x: 0.5, y: 0, z: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 1334397507}
+  knockback: 5
+  upKnock: 0
+  sideKnock: 0
 --- !u!1 &6239388680972138603
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +267,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6239388682087662735
 MonoBehaviour:
   m_ObjectHideFlags: 0
