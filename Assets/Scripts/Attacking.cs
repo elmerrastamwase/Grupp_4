@@ -7,7 +7,6 @@ public class Attacking : MonoBehaviour
     void Start()
     {
         GetComponent<BoxCollider2D>().enabled = false;
-        rbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -16,10 +15,26 @@ public class Attacking : MonoBehaviour
         {
             attackCooldown -= Time.deltaTime;
         }
-        else
+        else { attackCooldown = 0; }
+
+        if (upKnock > 0)
         {
-            attackCooldown = 0;
+            rbody.velocity = new Vector2(rbody.velocity.x, 5);
+            upKnock -= Time.deltaTime;
         }
+        else { upKnock = 0; }
+
+        if (sideKnock > 0)
+        {
+            rbody.velocity = new Vector2(-8 ,rbody.velocity.y);
+            sideKnock -= Time.deltaTime;
+        } else
+        {
+            sideKnock = 0;
+            rbody.velocity = new Vector2(0, rbody.velocity.y);
+        }
+
+
 
         AttackScript();
     }
@@ -33,34 +48,39 @@ public class Attacking : MonoBehaviour
     public Animator anim;
     public static float playerXPos;
     public float knockback;
+    public float upKnock;
+    public float sideKnock;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            Debug.Log ("enemy hit");
+            Debug.Log("enemy hit");
             if (Input.GetKey(KeyCode.W))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                collision.attachedRigidbody.velocity = (transform.up * -knockback);
+                collision.attachedRigidbody.velocity = (transform.up * -knockback * 0.5f);
+                upKnock = 0.1f;
+                Dashing.hasAirdash = true;
             }
             else
             {
-                collision.attachedRigidbody.velocity  = (transform.right * knockback);              
+                collision.attachedRigidbody.velocity = (transform.right * knockback);
+                sideKnock = 0.1f;
             }
         }
     }
 
     public void AttackScript()
-    {       
+    {
         if (attackCooldown <= 0 && Input.GetKeyDown(KeyCode.K))
         {
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
-            attackCooldown = 0.8f;
+            attackCooldown = 0.6f;
         }
         if (attackState > 0)
         {
@@ -71,7 +91,7 @@ public class Attacking : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
             attackState = 0;
-            anim.SetBool("isAttacking",false);
+            anim.SetBool("isAttacking", false);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -94,6 +114,6 @@ public class Attacking : MonoBehaviour
         {
             transform.Translate(1.5f, 1.5f, 0);
             anim.SetBool("facingUp", false);
-        }        
+        }
     }
 }
