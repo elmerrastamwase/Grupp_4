@@ -7,73 +7,61 @@ public class Dashing : MonoBehaviour
 
 
     private Rigidbody2D rbody;
-    public float dashtime;
-    public float dashspeed;
-    public float startdashtime = 1f;
-    public float coldown = 0;
-    private int direction;
-    public int dashcharges = 1;
-    
+    public float dashTime;
+    public float dashSpeed;
+    public float dashTimer;
+    public float cooldownLeft = 0;
+    public static float cooldown = 0.5f;
+    public static bool hasAirdash;
+    public static bool isDashing;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        dashtime = startdashtime;
-        rbody.velocity = Vector2.zero;
-
     }
 
     void Update()
     {
-
-        if (direction == 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && coldown == 0 )
+            if (cooldownLeft == 0)
             {
-
-                direction = 1;
-                coldown = 1;
-
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow) && coldown == 0)
-            {
-                direction = 2;
-                coldown = 1;
-            }
-            else
-            {
-                if (dashtime <= 0)
+                if (PlayerMovement.isGrounded == false)
                 {
-                    direction = 0;
-                    dashtime = startdashtime;
+                    if(hasAirdash == true)
+                    {
+                        cooldownLeft = cooldown;
+                        dashTimer = 0.3f;
+                        hasAirdash = false;
+                    }
+                } else {
+                cooldownLeft = cooldown;
+                dashTimer = 0.3f;
                 }
             }
         }
+
+        if (dashTimer > 0)
+        {
+            rbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+            transform.Translate(dashSpeed * Time.deltaTime, 0, 0);
+            dashTimer -= Time.deltaTime;
+            isDashing = true;
+        }
         else
         {
-            dashtime -= Time.deltaTime;
-            if (dashtime <= 0)
-            {
-                direction = 0;
-                dashtime = startdashtime;
-            }
-            if (direction == 1)
-            {
-                rbody.velocity = Vector2.left * dashspeed;
-            }
-            if (direction == 2)
-            {
-                rbody.velocity = Vector2.right * dashspeed;
-            }
-
+            dashTimer = 0;
+            rbody.constraints = RigidbodyConstraints2D.None;
+            isDashing = false;
         }
 
-        if (coldown >= 0)
+        if (cooldownLeft >= 0)
         {
-            coldown -= Time.deltaTime;
+            cooldownLeft -= Time.deltaTime;
         }
-        if (coldown <= 0)
+        if (cooldownLeft <= 0)
         {
-            coldown = 0;
+            cooldownLeft = 0;
         }
 
     }

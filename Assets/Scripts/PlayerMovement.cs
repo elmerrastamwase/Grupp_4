@@ -12,35 +12,67 @@ public class PlayerMovement : MonoBehaviour
 
    
 
-    private bool isGrounded;
+    public static bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
+
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().freezeRotation = true;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Rigidbody2D>().freezeRotation = true;
 
-        if (Input.GetKey(KeyCode.D))
+        animations();
+        if (Dashing.isDashing == false)
         {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+
+        Attacking.playerXPos = transform.position.x;
 
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    }
+
+    public void animations()
+    {
+        if (rbody.velocity.y < -0.1)
+        {
+            anim.SetBool("isFalling", true);
+        } else {
+            anim.SetBool("isFalling", false);
+        }
+        if (rbody.velocity.y > -0.1)
+        {
+            anim.SetBool("isJumpingUp", true);
+        }
+        else
+        {
+            anim.SetBool("isJumpingUp", false);
+        }
+        if(isGrounded == true)
+        {
+            anim.SetBool("isJumpingUp", false);
+            anim.SetBool("isFalling", false);
+        }
     }
 
     public void jumpScript()
@@ -50,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpTimeTimer = jumpTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
+            Dashing.hasAirdash = true;
         }
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
         {

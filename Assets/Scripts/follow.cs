@@ -10,11 +10,13 @@ public class follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        GetComponent<Rigidbody2D>().velocity = 
+            Vector2.MoveTowards(GetComponent<Rigidbody2D>().velocity, Vector2.zero, 2 * Time.deltaTime);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+       
         if (collision.tag == "Player")
         {
             float step = speed * Time.deltaTime;
