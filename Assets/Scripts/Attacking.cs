@@ -7,6 +7,7 @@ public class Attacking : MonoBehaviour
     void Start()
     {
         GetComponent<BoxCollider2D>().enabled = false;
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -23,14 +24,35 @@ public class Attacking : MonoBehaviour
         AttackScript();
     }
 
-    public Transform trans;
-
     public float attackCooldown;
     public int attackDamage;
     public float attackState;
     public GameObject player;
+    public Rigidbody2D rbody;
     public Vector3 Offset = new Vector3(0.5f, 0, 0);
     public Animator anim;
+    public static float playerXPos;
+    public float knockback;
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Debug.Log ("enemy hit");
+            if (Input.GetKey(KeyCode.W))
+            {
+                collision.attachedRigidbody.velocity = (transform.up * knockback);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                collision.attachedRigidbody.velocity = (transform.up * -knockback);
+            }
+            else
+            {
+                collision.attachedRigidbody.velocity  = (transform.right * knockback);              
+            }
+        }
+    }
 
     public void AttackScript()
     {       
@@ -38,6 +60,7 @@ public class Attacking : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
+            attackCooldown = 0.8f;
         }
         if (attackState > 0)
         {
@@ -71,6 +94,6 @@ public class Attacking : MonoBehaviour
         {
             transform.Translate(1.5f, 1.5f, 0);
             anim.SetBool("facingUp", false);
-        }
+        }        
     }
 }

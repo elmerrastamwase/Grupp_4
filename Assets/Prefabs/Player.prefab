@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2672555165eecf4ab5ae0d43c9ad055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans: {fileID: 0}
+  playerTrans: {fileID: 0}
   attackCooldown: 0
   attackDamage: 0
   attackState: 0
@@ -264,7 +264,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6239388682087662735
 MonoBehaviour:
   m_ObjectHideFlags: 0

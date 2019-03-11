@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-        GetComponent<Rigidbody2D>().freezeRotation = true;
         anim = GetComponent<Animator>();
     }
 
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         animations();
-            if (Dashing.isDashing == false)
+        if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -43,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
+
+        Attacking.playerXPos = transform.position.x;
 
         jumpScript();
 
