@@ -14,12 +14,16 @@ public class PlayerHP : MonoBehaviour
     public Sprite fullTank;
     public Sprite emptyTank;
 
-    // Update is called once per frame
     void Update()
     {
         if (playerHp > maxPlayerHp)
         {
             playerHp = maxPlayerHp;
+        }
+
+        if (playerHp <= 0)
+        {
+
         }
 
         if (hasIFrames == true)

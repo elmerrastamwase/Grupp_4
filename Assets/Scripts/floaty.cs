@@ -13,7 +13,7 @@ public class floaty : MonoBehaviour
         bounceTimer -= 1 * Time.deltaTime;
         if (bounceTimer <= 0)
         {
-            GetComponent<Rigidbody2D>().velocity = (Vector3.up * 0.5f) * 5;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,2.5f);
             bounceTimer = 1;
         }
     }

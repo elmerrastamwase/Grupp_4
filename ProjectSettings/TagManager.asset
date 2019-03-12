@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GM
   - EndOfPlatform
+  - Enemy
   - GroundEnemy
   layers:
   - Default
@@ -19,8 +20,8 @@ TagManager:
   - Camera
   - Ground
   - EnemyTriggers
-  - 
-  - 
+  - Weapon
+  - Player
   - 
   - 
   - 
