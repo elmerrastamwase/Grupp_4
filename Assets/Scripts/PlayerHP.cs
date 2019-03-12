@@ -25,11 +25,11 @@ public class PlayerHP : MonoBehaviour
         {
 
         }
- 
+
         //if (hasIFrames == true)
         //{
         //    iFrames -= 1;
-        //    if(iFrames < 1)
+        //    if (iFrames < 1)
         //    {
         //        hasIFrames = false;
         //        iFrames = 60;
