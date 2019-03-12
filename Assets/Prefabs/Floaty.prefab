@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 807775466757736083}
   - component: {fileID: 807775466757736080}
   m_Layer: 0
-  m_Name: Jelly
+  m_Name: Floaty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,4 +230,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93d32cea60b9ad40add34246d58d9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 3
+  Hp: 1

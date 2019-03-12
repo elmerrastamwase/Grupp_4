@@ -15,7 +15,8 @@ public class EnemyHit : MonoBehaviour
     {
         if (Hp == 0)
         {
-            Destroy(gameObject);
+            
+            Destroy(transform.parent.gameObject);
         }
     }
 
