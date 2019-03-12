@@ -16,7 +16,7 @@ public class Attacking : MonoBehaviour
             attackCooldown -= Time.deltaTime;
         }
         else { attackCooldown = 0; }
-
+        Debug.Log(PlayerMovement.direction);
         if (upKnock > 0)
         {
             rbody.velocity = new Vector2(rbody.velocity.x, 5);
@@ -26,7 +26,7 @@ public class Attacking : MonoBehaviour
 
         if (sideKnock > 0)
         {
-            rbody.velocity = new Vector2(-8 ,rbody.velocity.y);
+            rbody.velocity = new Vector2(PlayerMovement.direction ,rbody.velocity.y);
             sideKnock -= Time.deltaTime;
         } else
         {
