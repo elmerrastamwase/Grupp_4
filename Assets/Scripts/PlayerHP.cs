@@ -8,7 +8,7 @@ public class PlayerHP : MonoBehaviour
     public static int maxPlayerHp = 5;
     public static int playerHp = 5;
     public static bool hasIFrames;
-    public int iFrames = 60;
+    public float iFrames = 2;
 
     public Image[] tanks;
     public Sprite fullTank;
@@ -24,11 +24,11 @@ public class PlayerHP : MonoBehaviour
 
         if (hasIFrames == true)
         {
-            iFrames -= 1;
-            if(iFrames < 1)
+            iFrames -= 1 * Time.deltaTime;
+            if(iFrames <= 0)
             {
                 hasIFrames = false;
-                iFrames = 60;
+                iFrames = 2;
             }
         }
         for (int i = 0; i < tanks.Length; i++)
