@@ -1911,31 +1911,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1481793603 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 807775466757736086, guid: 176d2663bea2a6649ba27455b11d5c53,
-    type: 3}
-  m_PrefabInstance: {fileID: 1576964901402092528}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1481793610
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481793603}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 72eb888a85c6cf04b8c4303cc2fcb53a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1815079980
 GameObject:
   m_ObjectHideFlags: 0
@@ -7091,17 +7066,17 @@ PrefabInstance:
     - target: {fileID: 807775466757736086, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_Name
-      value: Jelly
+      value: Floaty
       objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.96
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.52
+      value: 4.65
       objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
@@ -7148,32 +7123,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.58959097
-      objectReference: {fileID: 0}
-    - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.56746
-      objectReference: {fileID: 0}
-    - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.56746
-      objectReference: {fileID: 0}
     - target: {fileID: 807775466757736087, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 338962290}
-    - target: {fileID: 807775466757736085, guid: 176d2663bea2a6649ba27455b11d5c53,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0809fa9bfb3f834438d967f2ee91b24c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176d2663bea2a6649ba27455b11d5c53, type: 3}
 --- !u!1001 &1970588704919438900
