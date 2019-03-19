@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be829b2046c62845914dfbc967fb9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iFrames: 60
+  iFrames: 2
   tanks:
   - {fileID: 0}
   - {fileID: 0}

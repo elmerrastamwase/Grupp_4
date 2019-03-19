@@ -55,7 +55,7 @@ public class Attacking : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("enemy hit");
-            Air.air += Random.Range(25,20);
+            Air.air += Random.Range(20,10);
             if (Input.GetKey(KeyCode.W))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);
