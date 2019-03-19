@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
-   
-    // Update is called once per frame
+    public float hitstun;
+    public PlayerMovement playerM;
+
     void Update()
     {
-        
+            if (hitstun > 0)
+            {
+                playerM.enabled = false;
+                hitstun -= Time.deltaTime;
+            }
+            else
+            {
+                playerM.enabled = true;
+                hitstun = 0;
+            }      
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -19,6 +29,8 @@ public class PlayerHit : MonoBehaviour
                 Debug.Log("hit");
                 PlayerHP.playerHp -= 1;
                 PlayerHP.hasIFrames = true;
+                collision.attachedRigidbody.velocity = new Vector3 (10,5,0);
+                hitstun = 0.5f;
             }
         }
     }

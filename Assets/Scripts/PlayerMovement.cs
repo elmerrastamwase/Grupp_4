@@ -2,7 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int moveSpeed = 5;
+    public int moveSpeed = 50;
     public float jumpForce = 10;
     public Transform feetPos;
     public float checkRadius = 0.5f;
@@ -33,16 +33,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                rbody.AddForce(new Vector2(moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                rbody.AddForce(new Vector2(-moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
             }
+           
         }
 
         Attacking.playerXPos = transform.position.x;
