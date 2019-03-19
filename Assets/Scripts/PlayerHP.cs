@@ -26,28 +26,28 @@ public class PlayerHP : MonoBehaviour
 
         }
 
-        if (hasIFrames == true)
-        {
-            iFrames -= 1;
-            if(iFrames < 1)
-            {
-                hasIFrames = false;
-                iFrames = 60;
-            }
-        }
-        for (int i = 0; i < tanks.Length; i++)
-        {
-            if(i < playerHp){
-                tanks[i].sprite = fullTank;
-            }else{
-                tanks[i].sprite = emptyTank;
-            }
+        //if (hasIFrames == true)
+        //{
+        //    iFrames -= 1;
+        //    if (iFrames < 1)
+        //    {
+        //        hasIFrames = false;
+        //        iFrames = 60;
+        //    }
+        //}
+        //for (int i = 0; i < tanks.Length; i++)
+        //{
+        //    if(i < playerHp){
+        //        tanks[i].sprite = fullTank;
+        //    }else{
+        //        tanks[i].sprite = emptyTank;
+        //    }
 
-            if (i < maxPlayerHp){
-                tanks[i].enabled = true;
-            }else{
-                tanks[i].enabled = false;
-            }
-        }
+        //    if (i < maxPlayerHp){
+        //        tanks[i].enabled = true;
+        //    }else{
+        //        tanks[i].enabled = false;
+        //    }
+        //}
     }
 }

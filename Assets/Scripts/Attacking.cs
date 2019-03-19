@@ -16,7 +16,6 @@ public class Attacking : MonoBehaviour
             attackCooldown -= Time.deltaTime;
         }
         else { attackCooldown = 0; }
-
         if (upKnock > 0)
         {
             rbody.velocity = new Vector2(rbody.velocity.x, 5);
@@ -26,7 +25,7 @@ public class Attacking : MonoBehaviour
 
         if (sideKnock > 0)
         {
-            rbody.velocity = new Vector2(-8 ,rbody.velocity.y);
+            rbody.velocity = new Vector2(PlayerMovement.direction ,rbody.velocity.y);
             sideKnock -= Time.deltaTime;
         } else
         {
@@ -56,6 +55,7 @@ public class Attacking : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("enemy hit");
+            Air.air += Random.Range(25,20);
             if (Input.GetKey(KeyCode.W))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);

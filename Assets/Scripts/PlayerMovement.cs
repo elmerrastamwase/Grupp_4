@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
+    public static int direction;
 
     public Animator anim;
 
@@ -34,11 +35,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
+                direction = -8;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
+                direction = 8;
             }
         }
 
