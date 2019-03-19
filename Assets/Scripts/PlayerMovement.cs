@@ -33,15 +33,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                rbody.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
+                Dashing.dashSpeed = 15;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                rbody.AddForce(new Vector2(-moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
+                Dashing.dashSpeed = -15;
             }
         }
 
@@ -57,7 +59,9 @@ public class PlayerMovement : MonoBehaviour
         if (rbody.velocity.y < -0.1)
         {
             anim.SetBool("isFalling", true);
-        } else {
+        }
+        else
+        {
             anim.SetBool("isFalling", false);
         }
         if (rbody.velocity.y > -0.1)
@@ -68,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isJumpingUp", false);
         }
-        if(isGrounded == true)
+        if (isGrounded == true)
         {
             anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
