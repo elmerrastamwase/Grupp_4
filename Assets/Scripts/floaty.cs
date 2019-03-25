@@ -5,6 +5,7 @@ using UnityEngine;
 public class floaty : MonoBehaviour
 {
     float bounceTimer = 0.5f;
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
