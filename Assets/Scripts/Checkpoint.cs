@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
     private Gamemaster gm;
+    public string sceneToLoad;
+    public Transform Player;
 
     public void Start()
     {
@@ -21,4 +24,5 @@ public class Checkpoint : MonoBehaviour
             }
         }
     }
+
 }
