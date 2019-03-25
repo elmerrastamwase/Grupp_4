@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().freezeRotation = true;
 
         animations();
+
         if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
@@ -86,17 +87,15 @@ public class PlayerMovement : MonoBehaviour
         if (rbody.velocity.y < -0.1)
         {
             anim.SetBool("isFalling", true);
-        } else {
-            anim.SetBool("isFalling", false);
-        }
-        if (rbody.velocity.y > -0.1)
-        {
-            anim.SetBool("isJumpingUp", true);
-        }
-        {
             anim.SetBool("isJumpingUp", false);
         }
-        if(isGrounded == true)
+        if (rbody.velocity.y > 0.1)
+        {
+            anim.SetBool("isJumpingUp", true);
+            anim.SetBool("isFalling", false);
+        }
+
+        else if(isGrounded == true)
         {
             anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
