@@ -7,47 +7,53 @@ public class GroundEnemyMove : MonoBehaviour
     public bool isRight = true;
     public float movementSpeed = 2f;
 
-    private Rigidbody2D rbody;
     void Start()
     {
-        rbody = GetComponent<Rigidbody2D>();
+
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            movementSpeed = 0f;
-            rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
-        }
-        else
-        {
-            movementSpeed = 2f;
-            if (isRight == true)
-            {
-                rbody.velocity = new Vector2(-movementSpeed, rbody.velocity.y);
-            }
-            else
-            {
-                rbody.velocity = new Vector2(movementSpeed, rbody.velocity.y);
-            }
-        }
-    }
+    /*  private void FixedUpdate()
+      {
+          movementSpeed = 2f;
+          if (isRight == true)
+          {
+              transform.Translate(movementSpeed, 0, 0, Space.World);
+          }
+          else
+          {
+              transform.Translate(-movementSpeed, 0, 0, Space.World);
+          }
+      }
+
+      private void OnTriggerStay2D(Collider2D collision)
+      {
+
+          if (collision.tag == "Player")
+          {
+              movementSpeed = 0f;
+          }
+          else
+          {
+              movementSpeed = 2f;
+          }
+      }
+      */
     public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "EndOfPlatform")
-        {
-            if(isRight == true)
-            {
-                isRight = false;
-                transform.Rotate(0, 180, 0);
-            }
-            else
-            {
-                isRight = true;
-                transform.Rotate(0, 180, 0);
-            }
-            
-        }
-    }
+      {
+          if (collision.tag == "EndOfPlatform")
+          {
+              if (isRight == true)
+              {
+                  isRight = false;
+                  transform.Rotate(0, 180, 0);
+              }
+              else
+              {
+                  isRight = true;
+                  transform.Rotate(0, 180, 0);
+              }
+
+          }
+      }
+      
 }

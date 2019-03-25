@@ -8,7 +8,7 @@ public class Dashing : MonoBehaviour
 
     private Rigidbody2D rbody;
     public float dashTime;
-    public float dashSpeed;
+    public static float dashSpeed;
     public float dashTimer;
     public float cooldownLeft = 0;
     public static float cooldown = 0.5f;
@@ -44,7 +44,8 @@ public class Dashing : MonoBehaviour
         if (dashTimer > 0)
         {
             rbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-            transform.Translate(dashSpeed * Time.deltaTime, 0, 0);
+            //transform.Translate(dashSpeed * Time.deltaTime, 0, 0);
+            rbody.AddForce(new Vector2(dashSpeed, 0), ForceMode2D.Impulse);
             dashTimer -= Time.deltaTime;
             isDashing = true;
         }

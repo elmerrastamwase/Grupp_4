@@ -7,8 +7,11 @@ TagManager:
   - GM
   - EndOfPlatform
   - Enemy
+<<<<<<< HEAD
   - Hazard
+=======
   - GroundEnemy
+>>>>>>> FabianAndersson
   layers:
   - Default
   - TransparentFX
