@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
                 isRunningRight = true;
+                Dashing.dashSpeed = 15;
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
                 isRunningRight = false;
+                Dashing.dashSpeed = -15;
             }
            
         }
