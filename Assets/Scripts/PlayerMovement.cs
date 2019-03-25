@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction;
+    public bool isRunningRight;
 
     public Animator anim;
 
@@ -36,15 +37,16 @@ public class PlayerMovement : MonoBehaviour
                 rbody.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
-                Dashing.dashSpeed = 15;
+                isRunningRight = true;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 rbody.AddForce(new Vector2(-moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
-                Dashing.dashSpeed = -15;
+                isRunningRight = false;
             }
+           
         }
 
         Attacking.playerXPos = transform.position.x;
@@ -54,28 +56,41 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
     }
 
+    void tables()
+    {
+        transform.eulerAngles = new Vector3(90, 0, 0);
+    }
+    /*the tables have turned*/
+
+
     public void animations()
     {
         if (rbody.velocity.y < -0.1)
         {
             anim.SetBool("isFalling", true);
-        }
-        else
-        {
+        } else {
             anim.SetBool("isFalling", false);
         }
         if (rbody.velocity.y > -0.1)
         {
             anim.SetBool("isJumpingUp", true);
         }
-        else
         {
             anim.SetBool("isJumpingUp", false);
         }
-        if (isGrounded == true)
+        if(isGrounded == true)
         {
             anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
+        }
+
+        if (rbody.velocity.x > 0.1)
+        {
+            anim.SetBool("isRunningRight", true);
+        }
+        else
+        {
+            anim.SetBool("isRunningRight", false);
         }
     }
 

@@ -8,10 +8,14 @@ public class LoadScene : MonoBehaviour
     public string sceneToLoad;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
     }
     public void sceneLoad()
     {
         SceneManager.LoadScene(sceneToLoad);
+    }
+    public void creditsScene()
+    {
+        SceneManager.LoadScene(2);
     }
 }

@@ -7,27 +7,16 @@ public class PlayerHit : MonoBehaviour
     public float hitstun;
     public PlayerMovement playerM;
 
-    private void Awake()
+    public void Awake()
     {
         playerM = GetComponent<PlayerMovement>();
     }
+
     void Update()
     {
-        if (hitstun > 0)
-        {
-            playerM.enabled = false;
-            hitstun -= Time.deltaTime;
-        }
-        else
-        {
-            if (playerM.enabled == false)
-            {
-                playerM.enabled = true;
-            }
 
-            hitstun = 0;
-        }
     }
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
