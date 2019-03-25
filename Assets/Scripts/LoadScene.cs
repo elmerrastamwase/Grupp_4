@@ -10,12 +10,19 @@ public class LoadScene : MonoBehaviour
     {
 
     }
+
     public void sceneLoad()
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
     public void creditsScene()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }

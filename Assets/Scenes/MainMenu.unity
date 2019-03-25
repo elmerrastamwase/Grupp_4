@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.299988, y: 451}
+  m_AnchoredPosition: {x: -16, y: 451}
   m_SizeDelta: {x: -1186.7, y: -999.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250476723
@@ -220,7 +220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.3, y: 451}
+  m_AnchoredPosition: {x: -11, y: 451}
   m_SizeDelta: {x: 3666.5, y: 400.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306379317
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 353465478}
   - component: {fileID: 353465477}
   m_Layer: 5
-  m_Name: howtoplay (1)
+  m_Name: credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77795ecad534e940b2cfb99503877aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Howtoplay
+  sceneToLoad: Credits
 --- !u!114 &353465478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 353465477}
-        m_MethodName: 
+        m_MethodName: creditsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 1390402301}
   - component: {fileID: 1390402300}
   m_Layer: 5
-  m_Name: howtoplay
+  m_Name: creditsButtoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
