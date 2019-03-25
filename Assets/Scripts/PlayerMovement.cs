@@ -53,6 +53,13 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
     }
 
+    void table()
+    {
+        transform.eulerAngles = new Vector3(90, 0, 0);
+    }
+    /*the tables have turned*/
+
+
     public void animations()
     {
         if (rbody.velocity.y < -0.1)
@@ -65,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isJumpingUp", true);
         }
-        else
+        
         {
             anim.SetBool("isJumpingUp", false);
         }
