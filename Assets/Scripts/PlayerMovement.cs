@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction;
-    public bool isRunningRight;
 
     public Animator anim;
 
@@ -37,18 +36,35 @@ public class PlayerMovement : MonoBehaviour
                 rbody.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
-                isRunningRight = true;
                 Dashing.dashSpeed = 15;
+
+                if (isGrounded == true)
+                {
+                    anim.SetBool("isRunning", true);
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                anim.SetBool("isRunning", false);
             }
             if (Input.GetKey(KeyCode.A))
             {
                 rbody.AddForce(new Vector2(-moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
-                isRunningRight = false;
                 Dashing.dashSpeed = -15;
+
+                if (isGrounded == true)
+                {
+                    anim.SetBool("isRunning", true);
+                }
+
             }
-           
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                anim.SetBool("isRunning", false);
+            }
+
         }
 
         Attacking.playerXPos = transform.position.x;
@@ -84,15 +100,6 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
-        }
-
-        if (rbody.velocity.x > 0.1)
-        {
-            anim.SetBool("isRunningRight", true);
-        }
-        else
-        {
-            anim.SetBool("isRunningRight", false);
         }
     }
 
