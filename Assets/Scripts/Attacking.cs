@@ -113,7 +113,7 @@ public class Attacking : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.S))
         {
             transform.Translate(1f, 1.5f, 0);
-            anim.SetBool("facingUp", false);
+            anim.SetBool("facingDown", false);
         }
     }
 }
