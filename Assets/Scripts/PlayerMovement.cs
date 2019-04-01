@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction;
-    public bool isRunningRight;
 
     public Animator anim;
 
@@ -30,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().freezeRotation = true;
 
         animations();
+
         if (Dashing.isDashing == false)
         {
             if (Input.GetKey(KeyCode.D))
@@ -37,19 +37,35 @@ public class PlayerMovement : MonoBehaviour
                 rbody.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
-                isRunningRight = true;
-                Dashing.dashSpeed = 16;
+                Dashing.dashSpeed = 15;
+
+                if (isGrounded == true)
+                {
+                    anim.SetBool("isRunning", true);
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                anim.SetBool("isRunning", false);
             }
             if (Input.GetKey(KeyCode.A))
             {
                 rbody.AddForce(new Vector2(-moveSpeed, 0), ForceMode2D.Impulse);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 direction = 8;
-                isRunningRight = false;
-                Dashing.dashSpeed = -16;
+                Dashing.dashSpeed = -15;
+
+                if (isGrounded == true)
+                {
+                    anim.SetBool("isRunning", true);
+                }
 
             }
-           
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                anim.SetBool("isRunning", false);
+            }
+
         }
 
         Attacking.playerXPos = transform.position.x;
@@ -71,29 +87,18 @@ public class PlayerMovement : MonoBehaviour
         if (rbody.velocity.y < -0.1)
         {
             anim.SetBool("isFalling", true);
-        } else {
-            anim.SetBool("isFalling", false);
+            anim.SetBool("isJumpingUp", false);
         }
-        if (rbody.velocity.y > -0.1)
+        if (rbody.velocity.y > 0.1)
         {
             anim.SetBool("isJumpingUp", true);
-        }
-        {
-            anim.SetBool("isJumpingUp", false);
-        }
-        if(isGrounded == true)
-        {
-            anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
         }
 
-        if (rbody.velocity.x > 0.1)
+        else if(isGrounded == true)
         {
-            anim.SetBool("isRunningRight", true);
-        }
-        else
-        {
-            anim.SetBool("isRunningRight", false);
+            anim.SetBool("isJumpingUp", false);
+            anim.SetBool("isFalling", false);
         }
     }
 
