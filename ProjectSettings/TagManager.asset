@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - GM
+  - EndOfPlatform
   - Enemy
   - Hazard
+  - GroundEnemy
   layers:
   - Default
   - TransparentFX

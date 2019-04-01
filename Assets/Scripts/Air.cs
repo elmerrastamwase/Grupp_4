@@ -21,7 +21,6 @@ public class Air : MonoBehaviour
     void Update()
     {
         bar.localScale = new Vector3(1,air / 100f);
-        Debug.Log(air);
         if (air >= 100)
         {
             air = 0;

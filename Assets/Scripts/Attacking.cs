@@ -55,7 +55,7 @@ public class Attacking : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("enemy hit");
-            Air.air += Random.Range(25,20);
+            Air.air += Random.Range(20,10);
             if (Input.GetKey(KeyCode.W))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);
@@ -96,24 +96,24 @@ public class Attacking : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.Translate(-1.5f, 1.5f, 0);
+            transform.Translate(-1f, 1.5f, 0);
             anim.SetBool("facingUp", true);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
-            transform.Translate(1.5f, -1.5f, 0);
+            transform.Translate(1f, -1.5f, 0);
             anim.SetBool("facingUp", false);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.Translate(-1.5f, -1.5f, 0);
+            transform.Translate(-1f, -1.5f, 0);
             anim.SetBool("facingDown", true);
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            transform.Translate(1.5f, 1.5f, 0);
-            anim.SetBool("facingUp", false);
+            transform.Translate(1f, 1.5f, 0);
+            anim.SetBool("facingDown", false);
         }
     }
 }
