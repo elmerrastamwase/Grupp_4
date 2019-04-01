@@ -1253,6 +1253,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1722512579, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 425527950, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 425527950, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 425527950, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99985397
+      objectReference: {fileID: 0}
+    - target: {fileID: 425527950, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318773757992741582, guid: eab9049213f99244b9e480b00e08ad31,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369732430738673582, guid: eab9049213f99244b9e480b00e08ad31,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
 --- !u!114 &1275883660 stripped

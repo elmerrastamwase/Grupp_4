@@ -59,6 +59,7 @@ public class Attacking : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);
+                
             }
             else if (Input.GetKey(KeyCode.S))
             {
