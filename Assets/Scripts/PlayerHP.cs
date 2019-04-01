@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerHP : MonoBehaviour
     public static int playerHp = 5;
     public static bool hasIFrames;
     public float iFrames = 2;
-
+    private Gamemaster gm;
     public Image[] tanks;
     public Sprite fullTank;
     public Sprite emptyTank;
@@ -44,6 +45,11 @@ public class PlayerHP : MonoBehaviour
             }else{
                 tanks[i].enabled = false;
             }
+        }
+        if (PlayerHP.playerHp <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerHP.playerHp = 5;
         }
     }
 }
