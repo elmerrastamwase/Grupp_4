@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 3
+  flash: 0
+  rend: {fileID: 108486142582546469}
 --- !u!1 &108486142582546464
 GameObject:
   m_ObjectHideFlags: 0

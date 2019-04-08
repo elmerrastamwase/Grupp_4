@@ -47,8 +47,8 @@ public class Attacking : MonoBehaviour
     public Animator anim;
     public static float playerXPos;
     public float knockback;
-    public float upKnock;
-    public float sideKnock;
+    private float upKnock;
+    private float sideKnock;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -81,7 +81,7 @@ public class Attacking : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
-            attackCooldown = 0.6f;
+            attackCooldown = 0.3f;
         }
         if (attackState > 0)
         {
