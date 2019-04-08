@@ -20,7 +20,7 @@ public class Air : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bar.localScale = new Vector3(1,air / 100f);
+        bar.localScale = new Vector3(0.5f,air / 100f);
         if (air >= 100)
         {
             air = 0;

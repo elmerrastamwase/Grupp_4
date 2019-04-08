@@ -18,6 +18,7 @@ public class craf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (flipTime > 0)
         {
             transform.Translate(1 * Time.deltaTime, 0, 0);
