@@ -52,22 +52,22 @@ public class Attacking : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" && gameObject.isStatic.Equals(false))
         {
             Debug.Log("enemy hit");
             Air.air += Random.Range(20,10);
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && gameObject.isStatic.Equals(false))
             {
                 collision.attachedRigidbody.velocity = (transform.up * knockback);
                 
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) && gameObject.isStatic.Equals(false))
             {
                 collision.attachedRigidbody.velocity = (transform.up * -knockback * 0.5f);
                 upKnock = 0.1f;
                 Dashing.hasAirdash = true;
             }
-            else
+            else if (gameObject.isStatic.Equals(false))
             {
                 collision.attachedRigidbody.velocity = (transform.right * knockback);
                 sideKnock = 0.1f;
