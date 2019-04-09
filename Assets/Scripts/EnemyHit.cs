@@ -10,7 +10,7 @@ public class EnemyHit : MonoBehaviour
 
     void Start()
     {
-        
+        rend = GetComponentInParent<SpriteRenderer>();
     }
 
     void Update()

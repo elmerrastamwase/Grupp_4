@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction;
-
     public Animator anim;
 
     // Start is called before the first frame update
@@ -26,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().freezeRotation = true;
+        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         animations();
 
