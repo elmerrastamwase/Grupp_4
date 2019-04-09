@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class ParticleContoller : MonoBehaviour
 {
-    public ParticleSystem DashParticle;
-    public ParticleSystem JumpParticle;
+    public ParticleSystem BubbleOnHit;
     void Start()
     {
-        
+        BubbleOnHit.Play();
     }
 
-    void Update()
+   /* void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if ()
         {
-            DashParticle.Play();
+            BubbleOnHit.Play
         }
     }
+    */
 }
