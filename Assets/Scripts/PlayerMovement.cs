@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction;
-
     public Animator anim;
 
     // Start is called before the first frame update
