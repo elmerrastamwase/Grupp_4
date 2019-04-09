@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleContoller : MonoBehaviour
 {
     public ParticleSystem DashParticle;
+    public ParticleSystem JumpParticle;
     void Start()
     {
         
