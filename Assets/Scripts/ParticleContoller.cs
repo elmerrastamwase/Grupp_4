@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class ParticleContoller : MonoBehaviour
 {
+    
     public ParticleSystem BubbleOnHit;
+
     void Start()
     {
-        BubbleOnHit.Play();
+        
     }
 
-   /* void Update()
+    void Update()
     {
-        if ()
-        {
-            BubbleOnHit.Play
-        }
+       //if () 
     }
-    */
 }
