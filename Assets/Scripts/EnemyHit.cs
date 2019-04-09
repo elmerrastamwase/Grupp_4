@@ -5,15 +5,19 @@ using UnityEngine;
 public class EnemyHit : MonoBehaviour
 {
     public int Hp;
-    private float flash;
+    public float flash;
     public SpriteRenderer rend;
+
+    void Start()
+    {
+        rend = GetComponentInParent<SpriteRenderer>();
+    }
 
     void Update()
     {
         if (Hp == 0)
         {           
             Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
         }
 
         if (flash > 0)

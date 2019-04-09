@@ -16,9 +16,12 @@ public class Dashing : MonoBehaviour
     public static bool hasAirdash;
     public static bool isDashing;
 
+    public Animator anim;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,10 +38,13 @@ public class Dashing : MonoBehaviour
                         dashTimer = 0.3f;
                         hasAirdash = false;
                     }
-                } else {
+                }
+
+                else
+                {
                 cooldownLeft = cooldown;
                 dashTimer = 0.3f;
-                }
+                } 
             }
         }
 
@@ -49,12 +55,17 @@ public class Dashing : MonoBehaviour
             rbody.AddForce(new Vector2(dashSpeed, 0), ForceMode2D.Impulse);
             dashTimer -= Time.deltaTime;
             isDashing = true;
+
+            anim.SetBool("isDashing", true);
         }
         else
         {
             dashTimer = 0;
             rbody.constraints = RigidbodyConstraints2D.None;
+            rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             isDashing = false;
+
+            anim.SetBool("isDashing", false);
         }
 
         if (cooldownLeft >= 0)
