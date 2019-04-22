@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ParticleContoller : MonoBehaviour
 {
-    public ParticleSystem DashParticle;
-    public ParticleSystem JumpParticle;
+    
+    public ParticleSystem BubbleOnHit;
+    public ParticleSystem DashBubble;
+
     void Start()
     {
         
@@ -15,7 +17,16 @@ public class ParticleContoller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            DashParticle.Play();
+            DashBubble.Play();
         }
     }
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            BubbleOnHit.Play();
+        }
+    }
+
 }
