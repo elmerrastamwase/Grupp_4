@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: cd68369f8b10e7c4988d90588a3e1b25
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Floating_Tile_Long__4
+    21300002: Floating_Tile_Long__5
+    21300004: Floating_Tile_Long__6
+    21300006: Floating_Tile_Long__7
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Floating_Tile_Long__4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 43}
+        - {x: -64, y: -12}
+        - {x: -58, y: -50}
+        - {x: -37, y: -52}
+        - {x: 31, y: -52}
+        - {x: 64, y: -45}
+        - {x: 64, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879a1ad919491884ebe82683d4dea321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating_Tile_Long__5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 86
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 43}
+        - {x: -64, y: -49}
+        - {x: -62, y: -50}
+        - {x: 55, y: -50}
+        - {x: 64, y: -44}
+        - {x: 64, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1763ab9cbd81f884bbf8cbaecdf1cfe8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating_Tile_Long__6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 86
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 43}
+        - {x: -64, y: -44}
+        - {x: -63, y: -45}
+        - {x: 51, y: -45}
+        - {x: 64, y: -43}
+        - {x: 64, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2a1dc83fd4d46409cee78cafe2df36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floating_Tile_Long__7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 86
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 43}
+        - {x: -64, y: -52}
+        - {x: 52, y: -52}
+        - {x: 62, y: -19}
+        - {x: 64, y: -4}
+        - {x: 64, y: 43}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d67022a4d63783459352be16fe89c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e67fe3bd95041d346b7c87364cf6f0f7
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
