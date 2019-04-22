@@ -12,12 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public static bool isGrounded;
     private Rigidbody2D rbody;
     private float jumpTimeTimer;
-    public static int direction;
+    public static int direction = 1;
     public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        direction = 1;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -25,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
         animations();
 
         if (Dashing.isDashing == false)

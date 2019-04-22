@@ -7,8 +7,7 @@ public class Dashing : MonoBehaviour
 {
 
 
-    private Rigidbody2D rbody;
-    public float dashTime;
+    public Rigidbody2D rbody;
     public static float dashSpeed;
     public float dashTimer;
     public float cooldownLeft = 0;
@@ -19,7 +18,7 @@ public class Dashing : MonoBehaviour
 
     void Start()
     {
-        //GetComponent<BoxCollider2D>().enabled = false;
+        
         rbody = GetComponent<Rigidbody2D>();
     }
 
@@ -46,7 +45,10 @@ public class Dashing : MonoBehaviour
 
         if (dashTimer > 0)
         {
-            rbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+            Debug.Log("dash");
+            rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation; 
+
+
             rbody.AddForce(new Vector2(dashSpeed, 0), ForceMode2D.Impulse);
             dashTimer -= Time.deltaTime;
             isDashing = true;
@@ -56,7 +58,7 @@ public class Dashing : MonoBehaviour
         {
             anim.SetBool("isDashing", false);
             dashTimer = 0;
-            rbody.constraints = RigidbodyConstraints2D.None;
+            rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             isDashing = false;
         }
 
