@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
+    public float attackCooldown;
+    public float attackState;
+    public static int attackDamage;
+    public GameObject player;
+    public Rigidbody2D rbody;
+    public Animator anim;
+    public static float playerXPos;
+    public float knockback;
+    private float upKnock;
+    private float sideKnock;
+    public float isAttacking;
+
     void Start()
     {
         GetComponent<BoxCollider2D>().enabled = false;
@@ -16,12 +28,6 @@ public class Attacking : MonoBehaviour
             attackCooldown -= Time.deltaTime;
         }
         else { attackCooldown = 0; }
-        if (upKnock > 0)
-        {
-            rbody.velocity = new Vector2(rbody.velocity.x, 5);
-            upKnock -= Time.deltaTime;
-        }
-        else { upKnock = 0; }
 
         if (sideKnock > 0)
         {
@@ -33,22 +39,29 @@ public class Attacking : MonoBehaviour
             rbody.velocity = new Vector2(0, rbody.velocity.y);
         }
 
+        if (attackCooldown == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                isAttacking = 0.5f;
+            }
+        }
+        if (isAttacking > 0)
+        {
+            anim.SetBool("isAttacking", true);
+            isAttacking -= Time.deltaTime;
+        }
+        else
+        {
+            anim.SetBool("isAttacking", false);
+            isAttacking = 0;
+        }
 
 
         AttackScript();
     }
 
-    public float attackCooldown;
-    public int attackDamage;
-    public float attackState;
-    public GameObject player;
-    public Rigidbody2D rbody;
-    public Vector3 Offset = new Vector3(0.5f, 0, 0);
-    public Animator anim;
-    public static float playerXPos;
-    public float knockback;
-    private float upKnock;
-    private float sideKnock;
+   
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,22 +69,10 @@ public class Attacking : MonoBehaviour
         {
             Debug.Log("enemy hit");
             Air.air += Random.Range(20,10);
-            if (Input.GetKey(KeyCode.W))
-            {
-                collision.attachedRigidbody.velocity = (transform.up * knockback);
-                
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                collision.attachedRigidbody.velocity = (transform.up * -knockback * 0.5f);
-                upKnock = 0.1f;
-                Dashing.hasAirdash = true;
-            }
-            else
-            {
+             
                 collision.attachedRigidbody.velocity = (transform.right * knockback);
                 sideKnock = 0.1f;
-            }
+            
         }
     }
 
@@ -79,42 +80,41 @@ public class Attacking : MonoBehaviour
     {
         if (attackCooldown <= 0 && Input.GetKeyDown(KeyCode.K))
         {
-            GetComponent<BoxCollider2D>().enabled = true;
-            attackState = 0.2f;
-            attackCooldown = 0.3f;
+            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+                attackState = 0.2f;
+                attackCooldown = 0.5f;
+            }
         }
         if (attackState > 0)
         {
             attackState -= Time.deltaTime;
-            anim.SetBool("isAttacking", true);
+            GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
             GetComponent<BoxCollider2D>().enabled = false;
             attackState = 0;
-            anim.SetBool("isAttacking", false);
+            GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+       if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.Translate(-1f, 1.5f, 0);
             anim.SetBool("facingUp", true);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
-            transform.Translate(1f, -1.5f, 0);
-            anim.SetBool("facingUp", false);
+            anim.SetBool("facingUp", false); 
         }
-
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.Translate(-1f, -1.5f, 0);
-            anim.SetBool("facingDown", true);
+            anim.SetBool("facingDown", true);   
         }
         if (Input.GetKeyUp(KeyCode.S))
-        {
-            transform.Translate(1f, 1.5f, 0);
-            anim.SetBool("facingDown", false);
+        {                   
+            anim.SetBool("facingDown", false); 
         }
+
     }
 }

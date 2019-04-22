@@ -14,7 +14,7 @@ public class floaty : MonoBehaviour
         if (bounceTimer <= 0)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,2.8f);
-            bounceTimer = Random.Range(1.1f,0.9f);
+            bounceTimer = Random.Range(1f,.9f);
         }
     }
 }
