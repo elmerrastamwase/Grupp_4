@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BubbleOnHit: {fileID: 0}
   DashBubble: {fileID: 0}
+  FlotingBubble: {fileID: 0}

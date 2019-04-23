@@ -5,6 +5,9 @@ using UnityEngine;
 public class parallax : MonoBehaviour
 {
     // Start is called before the first frame update
+    private float length, startposition;
+    public float paralexx;
+    
     void Start()
     {
         
