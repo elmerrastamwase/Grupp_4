@@ -7,6 +7,12 @@ public class ParticleContoller : MonoBehaviour
     
     public ParticleSystem BubbleOnHit;
     public ParticleSystem DashBubble;
+    public ParticleSystem FlotingBubble;
+
+    void Awake()
+    {
+        FlotingBubble.Play();
+    }
 
     void Start()
     {
