@@ -311,15 +311,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 2, y: 4, z: 0}
-    second:
-      m_TileIndex: 18
-      m_TileSpriteIndex: 30
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 5
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 3
-      m_ColliderType: 1
   - first: {x: -1, y: 5, z: 0}
     second:
       m_TileIndex: 47
@@ -484,7 +475,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d0a351af0c5df8449bf26c49e681795e, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 81fbf6485f73ea341a788ac2bb517bdc, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f6da61cf62d1f0a4b8978fd3c8934e36, type: 2}
@@ -605,7 +596,7 @@ Tilemap:
     m_Data: {fileID: 21300002, guid: 5465befb14954874b873b057b96b6aec, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 5465befb14954874b873b057b96b6aec, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: b401d7df6df36c94b80309a0107351e0, type: 3}
@@ -642,7 +633,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 054da4d4ff6616d47b2bda9302f6e2d2, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 45
+  - m_RefCount: 44
     m_Data:
       e00: 1
       e01: 0
@@ -671,8 +662,8 @@ Tilemap:
     m_Data: {r: 8e-45, g: 8e-45, b: 8e-45, a: 8e-45}
   - m_RefCount: 0
     m_Data: {r: 2.3679e-41, g: 2.3679e-41, b: 2.3679e-41, a: 2.3679e-41}
-  - m_RefCount: 1
-    m_Data: {r: 0.97789747, g: 0.4203833, b: 0.42617896, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 3e-45, g: 3e-45, b: 3e-45, a: 3e-45}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -1, y: -4, z: 0}
@@ -734,7 +725,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.13999999, y: 0.060000002, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
