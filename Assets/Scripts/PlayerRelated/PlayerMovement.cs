@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
         direction = 1;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        transform.position = Gamemaster.lastCheckPointPos;
     }
 
     // Update is called once per frame

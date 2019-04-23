@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 1
+  flash: 0
   rend: {fileID: 807775466757736085}
 --- !u!1001 &8071000755416461344
 PrefabInstance:
@@ -281,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 2536271427076143956, guid: d474975823485c84ea378d55d55bc6af,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2536271427076143956, guid: d474975823485c84ea378d55d55bc6af,
         type: 3}
@@ -322,6 +323,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536271427076143957, guid: d474975823485c84ea378d55d55bc6af,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536271427076143957, guid: d474975823485c84ea378d55d55bc6af,
+        type: 3}
+      propertyPath: m_Range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536271427076143957, guid: d474975823485c84ea378d55d55bc6af,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d474975823485c84ea378d55d55bc6af, type: 3}
