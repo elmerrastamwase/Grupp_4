@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147081814582754659}
   - component: {fileID: 7415844256735651232}
-  - component: {fileID: 3490598247385082676}
+  - component: {fileID: 1210289685439351559}
   m_Layer: 0
   m_Name: RoomTrans
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3490598247385082676
+--- !u!114 &1210289685439351559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6980913263307502473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77795ecad534e940b2cfb99503877aa, type: 3}
+  m_Script: {fileID: 11500000, guid: a97930a6c3abe42499ee8d5b58305385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneName: 50%
+  xPosition: 0
+  yPosition: 0
