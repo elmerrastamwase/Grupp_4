@@ -45,7 +45,6 @@ public class Dashing : MonoBehaviour
 
         if (dashTimer > 0)
         {
-            Debug.Log("dash");
             rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation; 
 
 
