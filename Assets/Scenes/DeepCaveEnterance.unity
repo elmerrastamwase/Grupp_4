@@ -611,6 +611,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: xPosition
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: yPosition
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: sceneName
+      value: Tutorial_movement_and_combat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75fa669297329ef4e8c9e5152044eee9, type: 3}
 --- !u!1 &830874814
@@ -4395,12 +4410,12 @@ PrefabInstance:
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.677451
+      value: 9.91
       objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.857433
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 807775466757736082, guid: 176d2663bea2a6649ba27455b11d5c53,
         type: 3}
