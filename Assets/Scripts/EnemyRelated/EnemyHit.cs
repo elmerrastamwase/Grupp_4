@@ -7,6 +7,7 @@ public class EnemyHit : MonoBehaviour
     public int Hp;
     public float flash;
     public SpriteRenderer rend;
+    public ParticleSystem Enemyhit;
 
     void Start()
     {
