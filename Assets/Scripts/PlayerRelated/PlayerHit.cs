@@ -23,7 +23,6 @@ public class PlayerHit : MonoBehaviour
         {
             if (PlayerHP.hasIFrames == false)
             {
-                Debug.Log("hit");
                 PlayerHP.playerHp -= 1;
                 PlayerHP.hasIFrames = true;
                 collision.attachedRigidbody.velocity = new Vector3(10, 5, 0);
