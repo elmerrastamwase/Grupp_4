@@ -71,7 +71,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 3
+  flash: 0
   rend: {fileID: 108486142582546469}
+  Enemyhit: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6,
+    type: 3}
+  deathTimer: 0.5
+  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
 --- !u!1 &108486142582546464
 GameObject:
   m_ObjectHideFlags: 0

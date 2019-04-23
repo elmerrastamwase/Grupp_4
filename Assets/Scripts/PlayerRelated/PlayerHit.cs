@@ -7,6 +7,7 @@ public class PlayerHit : MonoBehaviour
     public float hitstun;
     public PlayerMovement playerM;
 
+
     public void Awake()
     {
         playerM = GetComponent<PlayerMovement>();

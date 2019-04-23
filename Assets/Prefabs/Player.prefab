@@ -469,6 +469,7 @@ MonoBehaviour:
   dashTimer: 0
   cooldownLeft: 0
   anim: {fileID: 1334397507}
+  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
 --- !u!95 &1334397507
 Animator:
   serializedVersion: 3

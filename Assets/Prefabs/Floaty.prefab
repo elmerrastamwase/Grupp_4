@@ -257,6 +257,10 @@ MonoBehaviour:
   Hp: 1
   flash: 0
   rend: {fileID: 807775466757736085}
+  Enemyhit: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6,
+    type: 3}
+  deathTimer: 0.5
+  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
 --- !u!1001 &8071000755416461344
 PrefabInstance:
   m_ObjectHideFlags: 0
