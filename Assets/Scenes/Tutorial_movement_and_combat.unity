@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648640082849cd843a7d16daef8cbada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallax: 0.2
+  parallax: 0.5
   camra: {fileID: 1805223401}
   smooth: 0
 --- !u!1 &475518583
@@ -14035,7 +14035,7 @@ PrefabInstance:
     - target: {fileID: 147081814582754659, guid: 75fa669297329ef4e8c9e5152044eee9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.48
+      value: -55.42
       objectReference: {fileID: 0}
     - target: {fileID: 147081814582754659, guid: 75fa669297329ef4e8c9e5152044eee9,
         type: 3}
@@ -14091,6 +14091,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: xPosition
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: yPosition
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
+        type: 3}
+      propertyPath: sceneName
+      value: DeepCaveEnterance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75fa669297329ef4e8c9e5152044eee9, type: 3}
