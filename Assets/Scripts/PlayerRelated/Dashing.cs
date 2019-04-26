@@ -15,6 +15,8 @@ public class Dashing : MonoBehaviour
     public static bool hasAirdash;
     public static bool isDashing;
     public Animator anim;
+    public ParticleSystem bubles;
+    public GameObject SFX;
 
     void Start()
     {
@@ -35,11 +37,18 @@ public class Dashing : MonoBehaviour
                         cooldownLeft = cooldown;
                         dashTimer = 0.3f;
                         hasAirdash = false;
+                        ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
+                        Destroy(particle, bubles.main.duration);
+                        SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
                     }
                 } else {
                 cooldownLeft = cooldown;
                 dashTimer = 0.3f;
+                    ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
+                    Destroy(particle, bubles.main.duration);
+                    SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
                 }
+                
             }
         }
 

@@ -11,6 +11,7 @@ public class AttackingUp : MonoBehaviour
     public float knockback;
     public float attackCooldown;
     public float attackState;
+    public GameObject SFX;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class AttackingUp : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
             attackCooldown = 0.5f;
+            SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
 
         }
         if (attackState > 0)
