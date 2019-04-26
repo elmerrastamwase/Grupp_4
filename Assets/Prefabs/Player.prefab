@@ -444,7 +444,7 @@ MonoBehaviour:
   - {fileID: 368907181317063014}
   - {fileID: 368907180292661065}
   fullTank: {fileID: 21300000, guid: 9b50b362f60676e46892f91f0a7e6c53, type: 3}
-  emptyTank: {fileID: 21300000, guid: 627ec4bb61d496e4fa8ef3ee3930c61d, type: 3}
+  emptyTank: {fileID: 21300000, guid: 901e918890c975946ad2cdd60b8b5fea, type: 3}
 --- !u!114 &3777616480695171558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +791,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 893024043764226101, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -860,21 +875,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8333337
-      objectReference: {fileID: 0}
-    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8369ebefe34a2e7419eed0cb4f035a9f, type: 3}
