@@ -18,6 +18,7 @@ public class Dashing : MonoBehaviour
     public ParticleSystem bubles;
     public GameObject SFX;
 
+
     void Start()
     {
         
@@ -26,7 +27,9 @@ public class Dashing : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        float dashingButton = Input.GetAxis("dash");
+
+        if (dashingButton == 1)
         {
             if (cooldownLeft == 0)
             {
