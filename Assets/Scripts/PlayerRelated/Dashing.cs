@@ -25,7 +25,7 @@ public class Dashing : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float dashingButton = Input.GetAxis("dash");
 
