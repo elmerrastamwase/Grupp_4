@@ -26,13 +26,6 @@ public class ParticleContoller : MonoBehaviour
             DashBubble.Play();
         }
     }
-    
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemy")
-        {
-            BubbleOnHit.Play();
-        }
-    }
 
+    
 }

@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e5c6340bce86f4390a1f6a154bfae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleOnHit: {fileID: 0}
-  DashBubble: {fileID: 0}
-  FlotingBubble: {fileID: 0}
+  BubbleOnHit: {fileID: 3773243165642478489, guid: 0ceb3f11e9fc60c46bd85191aa7c1413,
+    type: 3}
+  DashBubble: {fileID: 5593429816568062958, guid: 9e0bc95703c494847b798c0c32838449,
+    type: 3}
+  FlotingBubble: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
+    type: 3}
