@@ -22,10 +22,11 @@ public class EnemyHit : MonoBehaviour
 
     void Update()
     {
-        if (Hp == 0)
+        if (Hp <= 0)
         {
-           
+            Debug.Log("yeet");
             Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
         }
 
         if (flash > 0)
