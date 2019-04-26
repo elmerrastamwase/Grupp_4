@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour
     private Gamemaster gm;
     public string sceneToLoad;
     public Transform Player;
+    public Animator icon;
+    public float timer;
 
     public void Start()
     {
@@ -16,11 +18,13 @@ public class Checkpoint : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (other.CompareTag("Player"))
             {
                 Gamemaster.lastCheckPointPos = transform.position;
+                icon.SetBool("x", true);
+                timer = 1;
             }
         }
     }
