@@ -53,7 +53,10 @@ public class AttackingDown : MonoBehaviour
 
     public void AttackScript()
     {
-        if (attackCooldown <= 0 && Input.GetKeyDown(KeyCode.K) && Input.GetKey(KeyCode.S))
+        float leftTrigger = Input.GetAxis("Fire1");
+        float lookUpOrDown = Input.GetAxis("LookUpOrDown");
+
+        if (attackCooldown <= 0 && leftTrigger == 1 && lookUpOrDown < 0)
         {
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
