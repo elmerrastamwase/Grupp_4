@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHit : MonoBehaviour
+public class chestDeath : MonoBehaviour
 {
     public int Hp;
     public float flash;
     public SpriteRenderer rend;
-
-
     public ParticleSystem bubles;
-
     public GameObject SFX;
-    public GameObject DeathSFX;
+    public GameObject DeathChest;
 
     void Start()
     {
@@ -24,8 +21,8 @@ public class EnemyHit : MonoBehaviour
     {
         if (Hp == 0)
         {
+            Instantiate(DeathChest);
            
-            Destroy(transform.parent.gameObject);
         }
 
         if (flash > 0)
@@ -53,11 +50,6 @@ public class EnemyHit : MonoBehaviour
             Hp -= 1;
             flash = .1f;
             SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
-            if (Hp <= 1)
-            {
-                DeathSFX = Instantiate(DeathSFX, transform.position, DeathSFX.transform.rotation);
-            }
-
         }
     }
 }
