@@ -24,7 +24,6 @@ public class Attacking : MonoBehaviour
 
     void Update()
     {
-        float leftTrigger = Input.GetAxis("Fire1");
 
         if (attackCooldown > 0)
         {
@@ -44,7 +43,7 @@ public class Attacking : MonoBehaviour
 
         if (attackCooldown == 0)
         {
-            if (leftTrigger == 1)
+            if (Input.GetButtonDown("Fire1"))
             {
                 isAttacking = 0.5f;
             }
@@ -80,10 +79,9 @@ public class Attacking : MonoBehaviour
 
     public void AttackScript()
     {
-        float leftTrigger = Input.GetAxis("Fire1");
         float lookUpOrDown = Input.GetAxis("LookUpOrDown");
 
-        if (attackCooldown <= 0 && leftTrigger == 1)
+        if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
         {
             if (lookUpOrDown == 0)
             {

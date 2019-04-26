@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     private SpriteRenderer sprit;
     private Rigidbody2D rbody;
+    private Transform transf;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         transform.position = Gamemaster.lastCheckPointPos;
         sprit = GetComponent<SpriteRenderer>();
-
+        transf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -47,13 +48,13 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (rbody.velocity.x < 0)
                     {
-                        sprit.flipX = false;
+                        transf.rotation = Quaternion.Euler(0, 180f, 0);
                         direction = 8;
                         Dashing.dashSpeed = -15;
                     }
                     else if (rbody.velocity.x > 0)
                     {
-                        sprit.flipX = true;
+                        transf.rotation = Quaternion.Euler(0, 0, 0);
                         direction = -8;
                         Dashing.dashSpeed = 15;
                     }
