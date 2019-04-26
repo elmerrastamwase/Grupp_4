@@ -126,6 +126,7 @@ MonoBehaviour:
   anim: {fileID: 1334397507}
   knockback: 5
   isAttacking: 0
+  SFX: {fileID: 8569728842049290342, guid: ef893a7515ecabd4b96a07f05a946bc8, type: 3}
 --- !u!1 &2345109055421756681
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   knockback: 0
   attackCooldown: 0
   attackState: 0
+  SFX: {fileID: 8569728842049290342, guid: ef893a7515ecabd4b96a07f05a946bc8, type: 3}
 --- !u!61 &7256132744032435625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -411,13 +413,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 8
+  jumpForce: 5
   feetPos: {fileID: 6239388680972138602}
   checkRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  jumpTime: 0.3
+  jumpTime: 1
   isJumping: 0
   anim: {fileID: 1334397507}
 --- !u!114 &9056061142858280023
@@ -470,6 +472,7 @@ MonoBehaviour:
   cooldownLeft: 0
   anim: {fileID: 1334397507}
   bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
+  SFX: {fileID: 309613820225227976, guid: 7ed4fdd5dfd4fe4438ab31e0daaed1e4, type: 3}
 --- !u!95 &1334397507
 Animator:
   serializedVersion: 3
@@ -680,6 +683,7 @@ MonoBehaviour:
   knockback: 0
   attackCooldown: 0
   attackState: 0
+  SFX: {fileID: 8569728842049290342, guid: ef893a7515ecabd4b96a07f05a946bc8, type: 3}
 --- !u!1001 &676863438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,23 +853,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
         type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
-        type: 3}
-      propertyPath: InitialModule.rotation3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
-        type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
         type: 3}
-      propertyPath: simulationSpeed
-      value: 1
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 893024043764226103, guid: 8369ebefe34a2e7419eed0cb4f035a9f,
         type: 3}

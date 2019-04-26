@@ -73,10 +73,11 @@ MonoBehaviour:
   Hp: 3
   flash: 0
   rend: {fileID: 108486142582546469}
-  Enemyhit: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6,
-    type: 3}
   deathTimer: 0.5
   bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
+  SFX: {fileID: 3952608507341933424, guid: cb71e4b0a72a0e3459f7b572d2d1efda, type: 3}
+  DeathSFX: {fileID: 7464117844670130686, guid: 51af76ff2f7823049af8ae46478ee83f,
+    type: 3}
 --- !u!1 &108486142582546464
 GameObject:
   m_ObjectHideFlags: 0
