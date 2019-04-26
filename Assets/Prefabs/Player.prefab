@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1657914263}
   - component: {fileID: 377479587318283210}
   - component: {fileID: 560465868}
+  - component: {fileID: 982789455145828916}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -422,6 +423,7 @@ MonoBehaviour:
   jumpTime: 1
   isJumping: 0
   anim: {fileID: 1334397507}
+  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
 --- !u!114 &9056061142858280023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +540,7 @@ MonoBehaviour:
   - {fileID: 368907181317063014}
   - {fileID: 368907180292661065}
   fullTank: {fileID: 21300000, guid: 9b50b362f60676e46892f91f0a7e6c53, type: 3}
-  emptyTank: {fileID: 21300000, guid: 627ec4bb61d496e4fa8ef3ee3930c61d, type: 3}
+  emptyTank: {fileID: 21300000, guid: 901e918890c975946ad2cdd60b8b5fea, type: 3}
 --- !u!68 &560465868
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -557,6 +559,14 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.24652141, y: -0.70297515}
   - {x: 0.42035556, y: -0.7023127}
+--- !u!81 &982789455145828916
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239388682087662740}
+  m_Enabled: 1
 --- !u!1 &8078512589551413983
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1001,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1950294736, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
+      propertyPath: playerRend
+      value: 
+      objectReference: {fileID: 6239388682087662737}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab9049213f99244b9e480b00e08ad31, type: 3}
 --- !u!114 &368907180292661065 stripped
