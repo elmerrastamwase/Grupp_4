@@ -8,15 +8,13 @@ public class PlayerHit : MonoBehaviour
     public PlayerMovement playerM;
 
 
+
     public void Awake()
     {
+       
         playerM = GetComponent<PlayerMovement>();
     }
 
-    void Update()
-    {
-
-    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -24,6 +22,7 @@ public class PlayerHit : MonoBehaviour
         {
             if (PlayerHP.hasIFrames == false)
             {
+               
                 PlayerHP.playerHp -= 1;
                 PlayerHP.hasIFrames = true;
                 collision.attachedRigidbody.velocity = new Vector3(10, 5, 0);
