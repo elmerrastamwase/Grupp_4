@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5485512419314279555}
   - component: {fileID: 5485512419314279553}
   - component: {fileID: 5485512419314279552}
-  - component: {fileID: 420273180}
+  - component: {fileID: 5746310067563796221}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Enemy
@@ -195,7 +195,7 @@ MonoBehaviour:
   text: {fileID: 5485512418557238374}
   bossMusic: {fileID: 7464117844670130686, guid: 51af76ff2f7823049af8ae46478ee83f,
     type: 3}
-  anim: {fileID: 420273180}
+  anim: {fileID: 5746310067563796221}
 --- !u!61 &5485512419314279552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.08, y: 2.49}
   m_EdgeRadius: 0
---- !u!95 &420273180
+--- !u!95 &5746310067563796221
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -232,7 +232,7 @@ Animator:
   m_GameObject: {fileID: 5485512419314279564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 80ea4b42fb748dc45b5aa234ab8a9c18, type: 2}
+  m_Controller: {fileID: 9100000, guid: 40be4bfa8f2e1a04a888affc48b55211, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
