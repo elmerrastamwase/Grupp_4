@@ -11,7 +11,7 @@ public class DyingChest : MonoBehaviour
     public ParticleSystem coin;
     public GameObject splinterSFX;
     public GameObject coinSFX;
-
+    public GameObject winGame;
 
     private void Start()
     {
@@ -44,6 +44,7 @@ public class DyingChest : MonoBehaviour
         {
             ParticleSystem particle = Instantiate(coin, transform.position, coin.transform.rotation);
             Destroy(particle, coin.main.duration);
+            gameWin.winGame = true;
             Destroy(gameObject);
         }
 

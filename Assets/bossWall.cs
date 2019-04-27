@@ -7,6 +7,11 @@ public class bossWall : MonoBehaviour
     public static bool bossDoor;
     public GameObject crunch;
 
+    private void Start()
+    {
+        bossDoor = false;
+    }
+
     public void Update()
     {
         if (bossDoor == true)
