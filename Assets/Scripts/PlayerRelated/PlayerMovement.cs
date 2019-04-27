@@ -2,7 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int moveSpeed = 5;
+    public int moveSpeed = 300;
     public float jumpForce = 10;
     public Transform feetPos;
     public float checkRadius = 0.5f;
@@ -10,10 +10,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime = 0.6f;
     public bool isJumping;
     public static bool isGrounded;
-    private Rigidbody2D rbody;
     private float jumpTimeTimer;
     public static int direction = 1;
+    public Transform headPos;
+    public bool isTouchingRoof;
+
+    [Header("PlayerComponents")]
     public Animator anim;
+    private SpriteRenderer sprit;
+    private Rigidbody2D rbody;
+    private Transform transf;
 
     // Start is called before the first frame update
     void Start()
@@ -22,45 +28,44 @@ public class PlayerMovement : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         transform.position = Gamemaster.lastCheckPointPos;
+        sprit = GetComponent<SpriteRenderer>();
+        transf = GetComponent<Transform>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         animations();
 
         if (Dashing.isDashing == false)
         {
-            if (Input.GetKey(KeyCode.D))
-            {
-                rbody.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Impulse);
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                direction = -8;
-                Dashing.dashSpeed = 15;
+            float xMovement = Input.GetAxis("Horizontal");
 
-                if (isGrounded == true)
-                {
-                    anim.SetBool("isRunning", true);
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                anim.SetBool("isRunning", false);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                rbody.AddForce(new Vector2(-moveSpeed, 0), ForceMode2D.Impulse);
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-                direction = 8;
-                Dashing.dashSpeed = -15;
+            rbody.AddForce(new Vector2(xMovement * moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse); //Adds force for movement.
 
-                if (isGrounded == true)
+
+                if (rbody.velocity.x > 0 || rbody.velocity.x < 0)
                 {
-                    anim.SetBool("isRunning", true);
+                    if (rbody.velocity.x < 0)
+                    {
+                        transf.rotation = Quaternion.Euler(0, 180f, 0);
+                        direction = 8;
+                        Dashing.dashSpeed = -15;
+                    }
+                    else if (rbody.velocity.x > 0)
+                    {
+                        transf.rotation = Quaternion.Euler(0, 0, 0);
+                        direction = -8;
+                        Dashing.dashSpeed = 15;
+                    }
+
+                    if (isGrounded == true)
+                    {
+                        anim.SetBool("isRunning", true);
+                    }
                 }
 
-            }
-            if (Input.GetKeyUp(KeyCode.A))
+            if (rbody.velocity.x == 0)
             {
                 anim.SetBool("isRunning", false);
             }
@@ -72,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+
+        isTouchingRoof = Physics2D.OverlapCircle(headPos.position, checkRadius, whatIsGround);
     }
 
     void tables()
@@ -94,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isFalling", false);
         }
 
-        else if(isGrounded == true)
+        else if (isGrounded == true)
         {
             anim.SetBool("isJumpingUp", false);
             anim.SetBool("isFalling", false);
@@ -103,26 +110,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void jumpScript()
     {
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+
+        if (isGrounded == true && Input.GetButton("Jump"))
         {
             isJumping = true;
             jumpTimeTimer = jumpTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
             Dashing.hasAirdash = true;
         }
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        if (Input.GetButton("Jump") && isJumping == true)
         {
             if (jumpTimeTimer > 0)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
                 jumpTimeTimer -= Time.deltaTime;
             }
-            else
-            {
-                isJumping = false;
-            }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Jump") || isJumping == false || isTouchingRoof == true)
         {
             isJumping = false;
         }

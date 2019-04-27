@@ -13,6 +13,7 @@ public class AttackingDown : MonoBehaviour
     private float upKnock;
     public float attackCooldown;
     public float attackState;
+    public GameObject SFX;
 
     void Start()
     {
@@ -52,11 +53,14 @@ public class AttackingDown : MonoBehaviour
 
     public void AttackScript()
     {
-        if (attackCooldown <= 0 && Input.GetKeyDown(KeyCode.K) && Input.GetKey(KeyCode.S))
+        float lookUpOrDown = Input.GetAxis("LookUpOrDown");
+
+        if (attackCooldown <= 0 && Input.GetButtonDown("Fire1") && lookUpOrDown < 0)
         {
             GetComponent<BoxCollider2D>().enabled = true;
             attackState = 0.2f;
             attackCooldown = 0.5f;
+            SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
 
         }
         if (attackState > 0)

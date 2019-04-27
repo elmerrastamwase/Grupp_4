@@ -7,17 +7,24 @@ public class EnemyHit : MonoBehaviour
     public int Hp;
     public float flash;
     public SpriteRenderer rend;
-    public ParticleSystem Enemyhit;
+
+    public float deathTimer = 0.5f;
+    public ParticleSystem bubles;
+
+    public GameObject SFX;
+    public GameObject DeathSFX;
 
     void Start()
     {
+        deathTimer = .5f;
         rend = GetComponentInParent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (Hp == 0)
-        {           
+        {
+            deathTimer -= Time.deltaTime;
             Destroy(transform.parent.gameObject);
         }
 
@@ -25,7 +32,14 @@ public class EnemyHit : MonoBehaviour
         {
             rend.color = Color.red;
             flash -= Time.deltaTime;
-        } else
+            if (bubles.isPlaying == false)
+            {
+                ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
+                Destroy(particle, bubles.main.duration);
+
+            }
+        }
+        else
         {
             rend.color = Color.white;
             flash = 0;
@@ -38,6 +52,12 @@ public class EnemyHit : MonoBehaviour
         {
             Hp -= 1;
             flash = .1f;
+            SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
+            if (Hp <= 1)
+            {
+                DeathSFX = Instantiate(DeathSFX, transform.position, DeathSFX.transform.rotation);
+            }
+
         }
     }
 }

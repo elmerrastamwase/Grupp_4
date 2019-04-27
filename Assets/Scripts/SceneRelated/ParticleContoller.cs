@@ -11,7 +11,7 @@ public class ParticleContoller : MonoBehaviour
 
     void Awake()
     {
-        FlotingBubble.Play();
+        FlotingBubble.Play(true);
     }
 
     void Start()
