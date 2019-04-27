@@ -11,6 +11,7 @@ public class chestTrap : MonoBehaviour
     public BoxCollider2D chestFight;
     public GameObject text;
     public GameObject bossMusic;
+    public Animator anim;
 
     private int rot = 0;
 
@@ -20,6 +21,7 @@ public class chestTrap : MonoBehaviour
             text.SetActive(true);
         if (Input.GetKeyDown(KeyCode.W))
         {
+            anim.SetBool("lift", true);
             if (other.CompareTag("Player"))
             {
                 x = true;
@@ -36,6 +38,8 @@ public class chestTrap : MonoBehaviour
         text.SetActive(false);
         gun.SetActive(false);
         chestFight.enabled = false;
+        
+        
 
     }
 
@@ -50,6 +54,8 @@ public class chestTrap : MonoBehaviour
                 transform.Translate(0, 0.03f, 0);
             else
             {
+                anim.SetBool("hover", true);
+
                 if (!gun.active)
                     gun.SetActive(true);
 
