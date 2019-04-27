@@ -44,15 +44,15 @@ public class PlayerMovement : MonoBehaviour
             rbody.AddForce(new Vector2(xMovement * moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse); //Adds force for movement.
 
 
-                if (rbody.velocity.x > 0 || rbody.velocity.x < 0)
+                if (xMovement > 0 || xMovement < 0)
                 {
-                    if (rbody.velocity.x < 0)
+                    if (xMovement < 0)
                     {
                         transf.rotation = Quaternion.Euler(0, 180f, 0);
                         direction = 8;
                         Dashing.dashSpeed = -15;
                     }
-                    else if (rbody.velocity.x > 0)
+                    else if (xMovement > 0)
                     {
                         transf.rotation = Quaternion.Euler(0, 0, 0);
                         direction = -8;
