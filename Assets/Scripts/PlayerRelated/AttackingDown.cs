@@ -41,7 +41,6 @@ public class AttackingDown : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            Debug.Log("enemy hit");
             Air.air += Random.Range(20, 10);
 
             collision.attachedRigidbody.velocity = (transform.up * -knockback * 0.5f);

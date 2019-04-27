@@ -462,12 +462,12 @@ PrefabInstance:
     - target: {fileID: 6239388682087662736, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.628982
+      value: 15.75
       objectReference: {fileID: 0}
     - target: {fileID: 6239388682087662736, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6601958
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 6239388682087662736, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
@@ -4629,16 +4629,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Bounds
       objectReference: {fileID: 0}
-    - target: {fileID: 4741017830019596960, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741017830019596960, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 4741017830019596963, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4693,6 +4683,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741017830019596960, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741017830019596960, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df36a7c43e2eb84ab53bb50b47a5fb5, type: 3}

@@ -13,7 +13,6 @@ public class RoomTranfer : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("door");
             Gamemaster.lastCheckPointPos = new Vector2(xPosition, yPosition);
            SceneManager.LoadScene(sceneName);
         }

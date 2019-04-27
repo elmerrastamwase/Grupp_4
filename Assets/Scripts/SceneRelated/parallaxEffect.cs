@@ -15,7 +15,7 @@ public class parallaxEffect : MonoBehaviour
     {
         Startpos = (transform.position.x +- transform.position.y);
         
-        legth = GetComponent<SpriteRenderer>().bounds.size.x;
+        //legth = GetComponent<SpriteRenderer>().bounds.size.x;
 
     }
 
