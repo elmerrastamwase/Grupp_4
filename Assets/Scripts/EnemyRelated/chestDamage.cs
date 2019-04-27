@@ -2,27 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chestDeath : MonoBehaviour
+public class chestDamage : MonoBehaviour
 {
     public int Hp;
     public float flash;
-    public SpriteRenderer rend;
+    private SpriteRenderer rend;
     public ParticleSystem bubles;
     public GameObject SFX;
     public GameObject DeathChest;
+    public static Vector2 chestLocation;
 
     void Start()
     {
-
         rend = GetComponentInParent<SpriteRenderer>();
     }
 
     void Update()
     {
+        chestLocation = transform.position;
         if (Hp == 0)
         {
             Instantiate(DeathChest);
-           
+            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
         }
 
         if (flash > 0)
