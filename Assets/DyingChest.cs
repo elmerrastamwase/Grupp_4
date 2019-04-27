@@ -12,10 +12,13 @@ public class DyingChest : MonoBehaviour
     public GameObject splinterSFX;
     public GameObject coinSFX;
 
+
     private void Start()
     {
-        dTimer = 3;
+        dTimer = .65f;
         center = chestDamage.chestLocation;
+        coinSFX = Instantiate(coinSFX, transform.position, coinSFX.transform.rotation);
+       
     }
     // Update is called once per frame
     void Update()
@@ -39,11 +42,11 @@ public class DyingChest : MonoBehaviour
         dTimer -= Time.deltaTime;
         if (dTimer <= 0)
         {
-            coinSFX = Instantiate(coinSFX, transform.position, coinSFX.transform.rotation);
             ParticleSystem particle = Instantiate(coin, transform.position, coin.transform.rotation);
             Destroy(particle, coin.main.duration);
             Destroy(gameObject);
         }
+
 
 
     }

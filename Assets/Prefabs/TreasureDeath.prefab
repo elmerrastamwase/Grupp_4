@@ -96,10 +96,10 @@ MonoBehaviour:
   shakeTimer: 0
   center: {x: 0, y: 0}
   dTimer: 0
-  splinters: {fileID: 3773243165642478489, guid: 0ceb3f11e9fc60c46bd85191aa7c1413,
+  splinters: {fileID: 3435323610797710912, guid: 9184593114f78c94893442b725755246,
     type: 3}
-  coin: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
-  splinterSFX: {fileID: 7464117844670130686, guid: 51af76ff2f7823049af8ae46478ee83f,
+  coin: {fileID: 3026109228491813690, guid: f931d69bf53ab01499e26addfba939c3, type: 3}
+  splinterSFX: {fileID: 1086257610152888928, guid: 9184593114f78c94893442b725755246,
     type: 3}
   coinSFX: {fileID: 1496483847643758259, guid: 0cb39e61545273e458f7919b27e07fe5, type: 3}
 --- !u!1001 &1185936953960803913

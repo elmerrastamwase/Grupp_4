@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5485512419314279555}
   - component: {fileID: 5485512419314279553}
   - component: {fileID: 5485512419314279552}
+  - component: {fileID: 5746310067563796221}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Enemy
@@ -192,7 +193,9 @@ MonoBehaviour:
   gun: {fileID: 5485512419370951400}
   chestFight: {fileID: 1635073116822711449}
   text: {fileID: 5485512418557238374}
-  bossMusic: {fileID: 0}
+  bossMusic: {fileID: 7464117844670130686, guid: 51af76ff2f7823049af8ae46478ee83f,
+    type: 3}
+  anim: {fileID: 5746310067563796221}
 --- !u!61 &5485512419314279552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,6 +222,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.08, y: 2.49}
   m_EdgeRadius: 0
+--- !u!95 &5746310067563796221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485512419314279564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40be4bfa8f2e1a04a888affc48b55211, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5485512419370951400
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 25
   flash: 0
-  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
+  bubles: {fileID: 3435323610797710912, guid: 9184593114f78c94893442b725755246, type: 3}
   SFX: {fileID: 5589432788840675339, guid: 0cd98dfee93118f44bb64e50883cd056, type: 3}
   DeathChest: {fileID: 3362432621778188902, guid: eca10d81c16990049ab693db3b03f6aa,
     type: 3}
