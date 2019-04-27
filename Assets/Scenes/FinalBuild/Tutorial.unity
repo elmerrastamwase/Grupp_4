@@ -22689,7 +22689,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aca5cb3f09d22704183c0632a82bf677, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -23609,15 +23609,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: 108486142582546471, guid: 61b914ba3c02ca84187e07295391893d,
-        type: 3}
-      propertyPath: flipTimer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1230635938, guid: 61b914ba3c02ca84187e07295391893d, type: 3}
-      propertyPath: hitstun
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 108486142582546469, guid: 61b914ba3c02ca84187e07295391893d,
         type: 3}
       propertyPath: m_DrawMode
@@ -23631,6 +23622,15 @@ PrefabInstance:
     - target: {fileID: 108486142582546469, guid: 61b914ba3c02ca84187e07295391893d,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108486142582546471, guid: 61b914ba3c02ca84187e07295391893d,
+        type: 3}
+      propertyPath: flipTimer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230635938, guid: 61b914ba3c02ca84187e07295391893d, type: 3}
+      propertyPath: hitstun
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24747,6 +24747,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4551988346324564004, guid: 657730edf00b07045af401db73dbf8d2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b7cdd4de7da8d174184fa900e65a67c7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657730edf00b07045af401db73dbf8d2, type: 3}
 --- !u!1001 &2053388531
