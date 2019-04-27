@@ -8,8 +8,9 @@ public class chestTrap : MonoBehaviour
     public Transform player;
     private bool x = false;
     public GameObject gun;
-
+    public BoxCollider2D chestFight;
     public GameObject text;
+    public GameObject bossMusic;
 
     private int rot = 0;
 
@@ -23,15 +24,18 @@ public class chestTrap : MonoBehaviour
             {
                 x = true;
                 text.SetActive(false);
+                chestFight.enabled = true;
+                bossMusic = Instantiate(bossMusic, transform.position, bossMusic.transform.rotation);
             }
         }
     }
 
     private void Start()
     {
-        gun.transform.Rotate(0, 0, -0.5f*50);
+        gun.transform.Rotate(0, 0, -0.5f * 50);
         text.SetActive(false);
         gun.SetActive(false);
+        chestFight.enabled = false;
 
     }
 
@@ -47,7 +51,7 @@ public class chestTrap : MonoBehaviour
             else
             {
                 if (!gun.active)
-                gun.SetActive(true);
+                    gun.SetActive(true);
 
 
                 transform.Translate(v, 0, 0);
