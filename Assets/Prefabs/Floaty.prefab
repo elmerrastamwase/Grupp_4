@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaf7a907646f304999d51ad28846c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1481793610}
 --- !u!95 &1481793610
 Animator:
   serializedVersion: 3
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitstun: 0
   playerM: {fileID: 0}
+  SFX: {fileID: 3502037126596119058, guid: 1a9a73d79890dac4abe20c0198c0deb7, type: 3}
 --- !u!61 &5703907797069791900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,10 +258,10 @@ MonoBehaviour:
   Hp: 1
   flash: 0
   rend: {fileID: 807775466757736085}
-  deathTimer: 0.5
   bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
   SFX: {fileID: 4660024432238046238, guid: 7e61ef641e1784e4f83f11d7183e5e6f, type: 3}
-  DeathSFX: {fileID: 0}
+  DeathSFX: {fileID: 4660024432238046238, guid: 7e61ef641e1784e4f83f11d7183e5e6f,
+    type: 3}
 --- !u!1001 &8071000755416461344
 PrefabInstance:
   m_ObjectHideFlags: 0

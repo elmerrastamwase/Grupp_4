@@ -1240,7 +1240,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -23609,6 +23609,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 108486142582546471, guid: 61b914ba3c02ca84187e07295391893d,
+        type: 3}
+      propertyPath: flipTimer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 108486142582546469, guid: 61b914ba3c02ca84187e07295391893d,
         type: 3}
       propertyPath: m_DrawMode
@@ -23623,11 +23628,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108486142582546471, guid: 61b914ba3c02ca84187e07295391893d,
-        type: 3}
-      propertyPath: flipTimer
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1230635938, guid: 61b914ba3c02ca84187e07295391893d, type: 3}
       propertyPath: hitstun
@@ -24898,17 +24898,17 @@ PrefabInstance:
     - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
         type: 3}
       propertyPath: sceneName
-      value: DeepCaveEnterance
+      value: FallingCavern
       objectReference: {fileID: 0}
     - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
         type: 3}
       propertyPath: xPosition
-      value: 15.75
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1210289685439351559, guid: 75fa669297329ef4e8c9e5152044eee9,
         type: 3}
       propertyPath: yPosition
-      value: 3.55
+      value: -2.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75fa669297329ef4e8c9e5152044eee9, type: 3}

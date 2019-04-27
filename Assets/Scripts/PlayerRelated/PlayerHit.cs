@@ -6,9 +6,8 @@ public class PlayerHit : MonoBehaviour
 {
     public float hitstun;
     public PlayerMovement playerM;
-
-
-
+    public GameObject SFX;
+    
     public void Awake()
     {
        
@@ -22,7 +21,7 @@ public class PlayerHit : MonoBehaviour
         {
             if (PlayerHP.hasIFrames == false)
             {
-               
+                SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
                 PlayerHP.playerHp -= 1;
                 PlayerHP.hasIFrames = true;
                 collision.attachedRigidbody.velocity = new Vector3(10, 5, 0);

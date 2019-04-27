@@ -10,9 +10,10 @@ public class chestTrap : MonoBehaviour
     public GameObject gun;
     public BoxCollider2D chestFight;
     public GameObject text;
-    public GameObject bossMusic;
+    public GameObject chestClose;
     public Animator anim;
-
+    public AudioSource bossMusic;
+    private bool musicIsplaying;
     private int rot = 0;
 
     public void OnTriggerStay2D(Collider2D other)
@@ -24,10 +25,14 @@ public class chestTrap : MonoBehaviour
             anim.SetBool("lift", true);
             if (other.CompareTag("Player"))
             {
+                if (musicIsplaying == false)
+                bossMusic.Play();
+
+                musicIsplaying = true;
                 x = true;
                 text.SetActive(false);
                 chestFight.enabled = true;
-                bossMusic = Instantiate(bossMusic, transform.position, bossMusic.transform.rotation);
+                chestClose = Instantiate(chestClose, transform.position, chestClose.transform.rotation);
             }
         }
     }
@@ -38,7 +43,7 @@ public class chestTrap : MonoBehaviour
         text.SetActive(false);
         gun.SetActive(false);
         chestFight.enabled = false;
-        
+        bossMusic.Stop();
         
 
     }

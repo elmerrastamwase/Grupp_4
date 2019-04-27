@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/FinalBuild/MainMenu.unity
     guid: 382fe8bee2e5be74daf44bc6b323e534
@@ -18,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalBuild/Tutorial.unity
     guid: a450c6dc150472744961b5b140fceae7
   - enabled: 1
-    path: Assets/Scenes/FallingCavern.unity
+    path: Assets/Scenes/FinalBuild/FallingCavern.unity
     guid: c7dec4b5c5a558041be960c01a439f0c
   - enabled: 1
-    path: Assets/Scenes/FinalBuild/DeepCaveEnterance.unity
-    guid: 1e43068692a375b45a62087083f428d2
+    path: Assets/Scenes/FinalBuild/DeepCave.unity
+    guid: dacc0a5a3891fd64abe8c54db4698e5a
   - enabled: 1
     path: Assets/Scenes/FinalBuild/OneWayCave.unity
     guid: 56d93556734347945a955d90b1ed6f4e

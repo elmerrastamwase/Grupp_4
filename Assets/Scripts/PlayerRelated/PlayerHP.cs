@@ -14,6 +14,8 @@ public class PlayerHP : MonoBehaviour
     public Image[] tanks;
     public Sprite fullTank;
     public Sprite emptyTank;
+    public SpriteRenderer player;
+    public GameObject deadPlayer;
 
     // Update is called once per frame
     void Update()
@@ -48,8 +50,8 @@ public class PlayerHP : MonoBehaviour
         }
         if (PlayerHP.playerHp <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            PlayerHP.playerHp = 5;
+            deadPlayer = Instantiate(deadPlayer, transform.position, deadPlayer.transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

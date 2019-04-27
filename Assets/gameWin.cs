@@ -14,7 +14,7 @@ public class gameWin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dTimer = 750;
+        dTimer = 200;
         darkness.color = new Color(1, 1, 1, 0);
     }
 
@@ -26,7 +26,7 @@ public class gameWin : MonoBehaviour
             {
 
                 dTimer--;
-                darkness.color = new Color(1, 1, 1, 1 - (dTimer * 0.002f));
+                darkness.color = new Color(1, 1, 1, 1 - (dTimer * 0.01333f));
             }
             else SceneManager.LoadScene(sceneName);
     }

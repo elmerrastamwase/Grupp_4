@@ -124,3 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitstun: 1
   playerM: {fileID: 0}
+  SFX: {fileID: 3502037126596119058, guid: 1a9a73d79890dac4abe20c0198c0deb7, type: 3}
