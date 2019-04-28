@@ -4670,6 +4670,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &566129466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1556555368399897394, guid: f9e60b0228b908a478033e9a030f4076,
+    type: 3}
+  m_PrefabInstance: {fileID: 1189558536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &609117851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4952,6 +4958,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1556555367167774545, guid: f9e60b0228b908a478033e9a030f4076,
+        type: 3}
+      propertyPath: isPaused
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e60b0228b908a478033e9a030f4076, type: 3}
 --- !u!212 &1217107367 stripped
@@ -5026,6 +5037,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508989987679425251, guid: 31dad41b8f179a642908ead633c603f1,
+        type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 566129466}
+    - target: {fileID: 3508989987679425251, guid: 31dad41b8f179a642908ead633c603f1,
+        type: 3}
+      propertyPath: m_sendNavigationEvents
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508989987679425250, guid: 31dad41b8f179a642908ead633c603f1,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31dad41b8f179a642908ead633c603f1, type: 3}
