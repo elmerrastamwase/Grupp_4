@@ -23,7 +23,8 @@ public class PauseMenuController : MonoBehaviour
 
     public void pauseMenuOpen()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetButtonDown("start"))
         {
             if (isPaused)
             {
