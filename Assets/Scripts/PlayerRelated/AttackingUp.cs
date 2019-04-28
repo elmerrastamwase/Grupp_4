@@ -18,7 +18,7 @@ public class AttackingUp : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         AttackScript();
 

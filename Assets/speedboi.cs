@@ -9,6 +9,6 @@ public class speedboi : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(new Vector3(0.1f*transform.rotation.z,-0.05f,0));
+        transform.Translate(new Vector3(0.05f*transform.rotation.z,-0.02f,0));
     }
 }
