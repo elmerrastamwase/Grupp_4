@@ -23,7 +23,7 @@ public class Attacking : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    void FixedUpdate()
+    void Update()
     {
 
         if (attackCooldown > 0)
