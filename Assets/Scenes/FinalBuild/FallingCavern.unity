@@ -554,6 +554,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3508989987679425251, guid: 31dad41b8f179a642908ead633c603f1,
+        type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 2021749068}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31dad41b8f179a642908ead633c603f1, type: 3}
 --- !u!1 &681373690
@@ -1570,28 +1575,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1556555367550187145, guid: f9e60b0228b908a478033e9a030f4076,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556555368399897396, guid: f9e60b0228b908a478033e9a030f4076,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556555368399897396, guid: f9e60b0228b908a478033e9a030f4076,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556555368399897396, guid: f9e60b0228b908a478033e9a030f4076,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e60b0228b908a478033e9a030f4076, type: 3}
+--- !u!1 &2021749068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1556555368399897394, guid: f9e60b0228b908a478033e9a030f4076,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021749067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2050630892
 PrefabInstance:
   m_ObjectHideFlags: 0
