@@ -57,9 +57,9 @@ public class Dashing : MonoBehaviour
 
         if (dashTimer > 0)
         {
-            rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation; 
+            rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-
+            PlayerMovement.isJumping = false;
             rbody.AddForce(new Vector2(dashSpeed, 0), ForceMode2D.Impulse);
             dashTimer -= Time.deltaTime;
             isDashing = true;

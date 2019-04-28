@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius = 0.5f;
     public LayerMask whatIsGround;
     public float jumpTime = 0.6f;
-    public bool isJumping;
+    public static bool isJumping;
     public static bool isGrounded;
     private float jumpTimeTimer;
     public static int direction = 1;
@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
             jumpTimeTimer = jumpTime;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, (jumpForce * jumpTimeTimer));
             Dashing.hasAirdash = true;
         }
         if (Input.GetButton("Jump") && isJumping == true)
