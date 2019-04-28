@@ -77,7 +77,15 @@ public class Attacking : MonoBehaviour
     public void AttackScript()
     {
         float lookUpOrDown = Input.GetAxis("LookUpOrDown");
+        if (lookUpOrDown > 0.6)
+            isLookingUp = true;
+        else isLookingUp = false;
+        if (lookUpOrDown < -0.6)
+            isLookingDown = true;
+        else isLookingDown = false;
 
+        if (isLookingUp == false)
+            if (isLookingDown == false)
                 if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
                 {
                     Attacking.isAttacking = 0.2f;

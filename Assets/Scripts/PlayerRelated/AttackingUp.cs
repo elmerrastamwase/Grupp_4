@@ -40,9 +40,8 @@ public class AttackingUp : MonoBehaviour
 
     public void AttackScript()
     {
-        float lookUpOrDown = Input.GetAxis("LookUpOrDown");
 
-        if (lookUpOrDown > 0)
+        if (Attacking.isLookingUp == true)
             if (Attacking.attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
             {
                 Attacking.isAttacking = 0.2f;

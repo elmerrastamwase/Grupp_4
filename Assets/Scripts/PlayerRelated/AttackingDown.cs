@@ -52,9 +52,8 @@ public class AttackingDown : MonoBehaviour
 
     public void AttackScript()
     {
-        float lookUpOrDown = Input.GetAxis("LookUpOrDown");
 
-        if (lookUpOrDown < 0)
+        if (Attacking.isLookingDown == true)
             if (attackCooldown <= 0 && Input.GetButtonDown("Fire1") && PlayerMovement.isGrounded == false)
             {
                 Attacking.isAttacking = 0.2f;
