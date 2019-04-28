@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    public float attackCooldown;
+    public static float attackCooldown;
     public float attackState;
     public static int attackDamage;
     public GameObject player;
@@ -12,10 +12,11 @@ public class Attacking : MonoBehaviour
     public Animator anim;
     public static float playerXPos;
     public float knockback;
-    private float upKnock;
     private float sideKnock;
-    public float isAttacking;
+    public static float isAttacking;
     public GameObject SFX;
+    public static bool isLookingUp;
+    public static bool isLookingDown;
 
     void Start()
     {
@@ -35,62 +36,65 @@ public class Attacking : MonoBehaviour
         {
             rbody.velocity = new Vector2(PlayerMovement.direction, rbody.velocity.y);
             sideKnock -= Time.deltaTime;
-        } else
+        }
+        else
         {
             sideKnock = 0;
             rbody.velocity = new Vector2(0, rbody.velocity.y);
         }
 
-        if (attackCooldown == 0)
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                isAttacking = 0.5f;
-            }
-        }
+         
+        
         if (isAttacking > 0)
         {
             anim.SetBool("isAttacking", true);
-            isAttacking -= Time.deltaTime;
+           isAttacking -= Time.deltaTime;
         }
         else
         {
             anim.SetBool("isAttacking", false);
             isAttacking = 0;
-        }
+        } 
 
         AttackScript();
     }
 
-   
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
             Debug.Log("enemy hit");
-            Air.air += Random.Range(15,5);
-             
-                collision.attachedRigidbody.velocity = (transform.right * knockback);
-                sideKnock = 0.1f;
-            
+            Air.air += Random.Range(15, 5);
+
+            collision.attachedRigidbody.velocity = (transform.right * knockback);
+            sideKnock = 0.1f;
+
         }
     }
 
     public void AttackScript()
     {
         float lookUpOrDown = Input.GetAxis("LookUpOrDown");
+        if (lookUpOrDown > 0.6)
+            isLookingUp = true;
+        else isLookingUp = false;
+        if (lookUpOrDown < -0.6)
+            isLookingDown = true;
+        else isLookingDown = false;
 
-        if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
-        {
-            if (lookUpOrDown == 0)
-            {
-                GetComponent<BoxCollider2D>().enabled = true;
-                attackState = 0.2f;
-                attackCooldown = 0.5f;
-                SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
-            }
-        }
+        if (isLookingUp == false)
+            if (isLookingDown == false)
+                if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
+                {
+                    Attacking.isAttacking = 0.2f;
+                    GetComponent<BoxCollider2D>().enabled = true;
+                    attackState = 0.2f;
+                    attackCooldown = 0.5f;
+                    SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
+
+                }
         if (attackState > 0)
         {
             attackState -= Time.deltaTime;
@@ -103,21 +107,21 @@ public class Attacking : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
         }
 
-       if (lookUpOrDown == 1)
+        if (isLookingUp == true)
         {
             anim.SetBool("facingUp", true);
         }
-        if (lookUpOrDown == 0)
+        if (isLookingUp == false)
         {
-            anim.SetBool("facingUp", false); 
+            anim.SetBool("facingUp", false);
         }
-        if (lookUpOrDown == -1)
+        if (isLookingDown == true)
         {
-            anim.SetBool("facingDown", true);   
+            anim.SetBool("facingDown", true);
         }
-        if (lookUpOrDown == 0)
-        {                   
-            anim.SetBool("facingDown", false); 
+        if (isLookingDown == false)
+        {
+            anim.SetBool("facingDown", false);
         }
 
     }

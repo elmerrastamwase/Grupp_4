@@ -14,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
     public static int direction = 1;
     public Transform headPos;
     public bool isTouchingRoof;
-
+    public static bool isWalkingLeft;
+    public static bool isWalkingRight;
     [Header("PlayerComponents")]
     public Animator anim;
     private SpriteRenderer sprit;
     private Rigidbody2D rbody;
     private Transform transf;
+    public float xMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -35,35 +37,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        float xMovement = Input.GetAxis("Horizontal");
         animations();
+        if (xMovement < -0.4 )
+            isWalkingLeft = true;
+        else isWalkingLeft = false;
+        if (xMovement > 0.4)
+            isWalkingRight = true;
+        else isWalkingRight = false;
 
         if (Dashing.isDashing == false)
         {
-            float xMovement = Input.GetAxis("Horizontal");
+            if (isWalkingLeft == true)
+            {
+                rbody.AddForce(new Vector2(-moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
+                transf.rotation = Quaternion.Euler(0, 180f, 0);
+                direction = 8;
+                Dashing.dashSpeed = -15;
+            }
+            else if (isWalkingRight == true)
+            {
+                rbody.AddForce(new Vector2(moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
+                transf.rotation = Quaternion.Euler(0, 0, 0);
+                direction = -8;
+                Dashing.dashSpeed = 15;
+            }
 
-            rbody.AddForce(new Vector2(xMovement * moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse); //Adds force for movement.
+            if (isGrounded == true)
+            {
+                anim.SetBool("isRunning", true);
+            }
 
-
-                if (xMovement > 0 || xMovement < 0)
-                {
-                    if (xMovement < 0)
-                    {
-                        transf.rotation = Quaternion.Euler(0, 180f, 0);
-                        direction = 8;
-                        Dashing.dashSpeed = -15;
-                    }
-                    else if (xMovement > 0)
-                    {
-                        transf.rotation = Quaternion.Euler(0, 0, 0);
-                        direction = -8;
-                        Dashing.dashSpeed = 15;
-                    }
-
-                    if (isGrounded == true)
-                    {
-                        anim.SetBool("isRunning", true);
-                    }
-                }
 
             if (rbody.velocity.x == 0)
             {

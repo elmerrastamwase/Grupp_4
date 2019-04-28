@@ -52,24 +52,26 @@ public class AttackingDown : MonoBehaviour
 
     public void AttackScript()
     {
-        float lookUpOrDown = Input.GetAxis("LookUpOrDown");
 
-        if (attackCooldown <= 0 && Input.GetButtonDown("Fire1") && lookUpOrDown < 0)
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-            attackState = 0.2f;
-            attackCooldown = 0.5f;
-            SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
+        if (Attacking.isLookingDown == true)
+            if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
+            {
+                Attacking.isAttacking = 0.2f;
+                GetComponent<BoxCollider2D>().enabled = true;
+                attackState = 0.2f;
+                attackCooldown = 0.5f;
+                SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
 
-        }
+            }
         if (attackState > 0)
         {
-            
+
             attackState -= Time.deltaTime;
             GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
+
             GetComponent<BoxCollider2D>().enabled = false;
             attackState = 0;
             GetComponent<SpriteRenderer>().enabled = false;
