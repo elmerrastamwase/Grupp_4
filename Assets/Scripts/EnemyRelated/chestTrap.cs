@@ -20,7 +20,7 @@ public class chestTrap : MonoBehaviour
     {
         if (!x)
             text.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Attacking.isLookingUp == true)
         {
             anim.SetBool("lift", true);
             if (other.CompareTag("Player"))

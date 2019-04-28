@@ -54,7 +54,7 @@ public class AttackingDown : MonoBehaviour
     {
 
         if (Attacking.isLookingDown == true)
-            if (attackCooldown <= 0 && Input.GetButtonDown("Fire1"))
+            if (attackCooldown <= 0 && Input.GetButtonDown("Fire1") && PlayerMovement.isGrounded == false)
             {
                 Attacking.isAttacking = 0.2f;
                 GetComponent<BoxCollider2D>().enabled = true;

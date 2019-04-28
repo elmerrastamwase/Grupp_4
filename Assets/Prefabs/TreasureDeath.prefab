@@ -102,6 +102,7 @@ MonoBehaviour:
   splinterSFX: {fileID: 1086257610152888928, guid: 9184593114f78c94893442b725755246,
     type: 3}
   coinSFX: {fileID: 1496483847643758259, guid: 0cb39e61545273e458f7919b27e07fe5, type: 3}
+  winGame: {fileID: 7663852194989250347, guid: 19636cfa62f20ac44b7dba424385511c, type: 3}
 --- !u!1001 &1185936953960803913
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -270,9 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadPlayer: {fileID: 2361904739122192857}
-  sceneToLoad: 
+  sceneToLoad: MainMenu
   darkness: {fileID: 5014021850157406693}
-  anim: {fileID: 0}
+  anim: {fileID: 6468923031238944961}
 --- !u!95 &6468923031238944961
 Animator:
   serializedVersion: 3

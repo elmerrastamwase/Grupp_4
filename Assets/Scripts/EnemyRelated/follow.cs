@@ -20,6 +20,7 @@ public class follow : MonoBehaviour
 
         GameObject PlayerFinder = GameObject.Find("Player");
         target = PlayerFinder.transform;
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
