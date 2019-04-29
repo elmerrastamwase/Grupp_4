@@ -12,6 +12,7 @@ public class playerDeath : MonoBehaviour
     private float dTimer;
     public Animator anim;
 
+
     void Start()
     {
         dTimer = 100;

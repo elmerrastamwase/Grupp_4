@@ -31,7 +31,7 @@ public class RoomTranfer : MonoBehaviour
             else
             {
                 PlayerHP.playerHp = 5;
-                dTimer = 75;
+                dTimer = 10;
                 Gamemaster.lastCheckPointPos = new Vector2(xPosition, yPosition);
                 SceneManager.LoadScene(sceneName);
             }
