@@ -22,6 +22,7 @@ public class EnemyHit : MonoBehaviour
 
     void Update()
     {
+        timer -= Time.deltaTime;
         if (Hp <= 0)
         {
             Debug.Log("yeet");
@@ -41,7 +42,6 @@ public class EnemyHit : MonoBehaviour
                     ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
                     Destroy(particle, bubles.main.duration);
                 }
-                else timer -= Time.deltaTime;
             }
         }
         else
