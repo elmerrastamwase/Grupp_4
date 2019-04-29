@@ -10,7 +10,7 @@ public class EnemyHit : MonoBehaviour
 
 
     public ParticleSystem bubles;
-
+    public float timer;
     public GameObject SFX;
     public GameObject DeathSFX;
 
@@ -35,9 +35,13 @@ public class EnemyHit : MonoBehaviour
             flash -= Time.deltaTime;
             if (bubles.isPlaying == false)
             {
-                ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
-                Destroy(particle, bubles.main.duration);
-
+                timer = 0.2f;
+                if (timer <= 0)
+                {
+                    ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
+                    Destroy(particle, bubles.main.duration);
+                }
+                else timer -= Time.deltaTime;
             }
         }
         else

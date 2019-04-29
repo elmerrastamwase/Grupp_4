@@ -20,21 +20,21 @@ public class chestTrap : MonoBehaviour
     {
         if (!x)
             text.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.W) || Attacking.isLookingUp == true)
+
+
+        anim.SetBool("lift", true);
+        if (other.CompareTag("Player"))
         {
-            anim.SetBool("lift", true);
-            if (other.CompareTag("Player"))
-            {
-                if (musicIsplaying == false)
+            if (musicIsplaying == false)
                 bossMusic.Play();
 
-                musicIsplaying = true;
-                x = true;
-                text.SetActive(false);
-                chestFight.enabled = true;
-                chestClose = Instantiate(chestClose, transform.position, chestClose.transform.rotation);
-            }
+            musicIsplaying = true;
+            x = true;
+            text.SetActive(false);
+            chestFight.enabled = true;
+            chestClose = Instantiate(chestClose, transform.position, chestClose.transform.rotation);
         }
+
     }
 
     private void Start()
@@ -44,7 +44,7 @@ public class chestTrap : MonoBehaviour
         gun.SetActive(false);
         chestFight.enabled = false;
         bossMusic.Stop();
-        
+
 
     }
 
