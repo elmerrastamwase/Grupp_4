@@ -22846,7 +22846,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1518595285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31dad41b8f179a642908ead633c603f1, type: 3}
 --- !u!1 &712302369
@@ -23857,6 +23857,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e60b0228b908a478033e9a030f4076, type: 3}
+--- !u!1 &1518595285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1556555368399897394, guid: f9e60b0228b908a478033e9a030f4076,
+    type: 3}
+  m_PrefabInstance: {fileID: 1518595284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529909682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6980913263307502473, guid: 75fa669297329ef4e8c9e5152044eee9,
