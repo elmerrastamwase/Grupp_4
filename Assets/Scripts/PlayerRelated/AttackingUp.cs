@@ -47,7 +47,7 @@ public class AttackingUp : MonoBehaviour
                 Attacking.isAttacking = 0.2f;
                 GetComponent<BoxCollider2D>().enabled = true;
                 attackState = 0.2f;
-                Attacking.attackCooldown = 0.5f;
+                Attacking.attackCooldown = 0.3f;
                 SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
 
             }
