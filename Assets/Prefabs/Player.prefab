@@ -119,13 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2672555165eecf4ab5ae0d43c9ad055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0
   attackState: 0
   player: {fileID: 6239388682087662740}
   rbody: {fileID: 6239388682087662738}
   anim: {fileID: 1334397507}
   knockback: 5
-  isAttacking: 0
   SFX: {fileID: 8569728842049290342, guid: ef893a7515ecabd4b96a07f05a946bc8, type: 3}
 --- !u!1 &1348723957
 GameObject:
@@ -776,8 +774,8 @@ MonoBehaviour:
   Offset: {x: 0.5, y: 0, z: 0}
   anim: {fileID: 1334397507}
   knockback: 0
-  attackCooldown: 0
   attackState: 0
+  isAttacking: 0
   SFX: {fileID: 8569728842049290342, guid: ef893a7515ecabd4b96a07f05a946bc8, type: 3}
 --- !u!61 &7256132744032435625
 BoxCollider2D:
@@ -6148,18 +6146,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49a08af98a7b8241a0d772ccf8398db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 300
+  moveSpeed: 400
   jumpForce: 5
   feetPos: {fileID: 6239388680972138602}
   checkRadius: 0.15
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  jumpTime: 1
-  isJumping: 0
+  jumpTime: 0.8
   headPos: {fileID: 8764966695944460407}
   isTouchingRoof: 0
   anim: {fileID: 1334397507}
+  xMovement: 0
 --- !u!114 &9056061142858280023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6181,6 +6179,8 @@ MonoBehaviour:
   - {fileID: 368907180292661065}
   fullTank: {fileID: 21300000, guid: 9b50b362f60676e46892f91f0a7e6c53, type: 3}
   emptyTank: {fileID: 21300000, guid: 901e918890c975946ad2cdd60b8b5fea, type: 3}
+  player: {fileID: 0}
+  deadPlayer: {fileID: 0}
 --- !u!114 &3777616480695171558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6277,6 +6277,8 @@ MonoBehaviour:
   - {fileID: 368907180292661065}
   fullTank: {fileID: 21300000, guid: 9b50b362f60676e46892f91f0a7e6c53, type: 3}
   emptyTank: {fileID: 21300000, guid: 901e918890c975946ad2cdd60b8b5fea, type: 3}
+  player: {fileID: 0}
+  deadPlayer: {fileID: 0}
 --- !u!68 &560465868
 EdgeCollider2D:
   m_ObjectHideFlags: 0
