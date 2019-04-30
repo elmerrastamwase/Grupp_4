@@ -6158,6 +6158,7 @@ MonoBehaviour:
   isTouchingRoof: 0
   anim: {fileID: 1334397507}
   xMovement: 0
+  bubles: {fileID: 3276481730573525056, guid: 7d5a8af7b010c7044b8acefb1166c4b6, type: 3}
 --- !u!114 &9056061142858280023
 MonoBehaviour:
   m_ObjectHideFlags: 0

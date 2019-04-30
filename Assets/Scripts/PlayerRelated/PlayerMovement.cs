@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rbody;
     private Transform transf;
     public float xMovement;
+    public ParticleSystem bubles;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeTimer = jumpTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, (jumpForce * jumpTimeTimer));
             Dashing.hasAirdash = true;
+            ParticleSystem particle = Instantiate(bubles, transform.position + Vector3.down * 0.7f, bubles.transform.rotation);
+            Destroy(particle, bubles.main.duration);
         }
         if (Input.GetButton("Jump") && isJumping == true)
         {
