@@ -35,6 +35,28 @@ public class PlayerMovement : MonoBehaviour
         transf = GetComponent<Transform>();
     }
 
+    private void FixedUpdate()
+    {
+        float xMovement = Input.GetAxis("Horizontal");
+        animations();
+        if (xMovement < -0.4)
+            isWalkingLeft = true;
+        else isWalkingLeft = false;
+        if (xMovement > 0.4)
+            isWalkingRight = true;
+        else isWalkingRight = false;
+
+        if (isWalkingLeft == true)
+        {
+            transf.rotation = Quaternion.Euler(0, 180f, 0);
+
+        }
+        else if (isWalkingRight == true)
+        {
+            transf.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -52,14 +74,12 @@ public class PlayerMovement : MonoBehaviour
             if (isWalkingLeft == true)
             {
                 rbody.AddForce(new Vector2(-moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
-                transf.rotation = Quaternion.Euler(0, 180f, 0);
                 direction = 8;
                 Dashing.dashSpeed = -15;
             }
             else if (isWalkingRight == true)
             {
                 rbody.AddForce(new Vector2(moveSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
-                transf.rotation = Quaternion.Euler(0, 0, 0);
                 direction = -8;
                 Dashing.dashSpeed = 15;
             }
