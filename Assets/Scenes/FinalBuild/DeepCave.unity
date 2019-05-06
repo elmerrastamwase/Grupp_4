@@ -49321,6 +49321,11 @@ PrefabInstance:
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.data[874].y
       value: -29
       objectReference: {fileID: 0}
+    - target: {fileID: 5776748153091467210, guid: 2db37d6e7dd7048409a5411cf49d0cce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db37d6e7dd7048409a5411cf49d0cce, type: 3}
 --- !u!1 &266312720
@@ -50177,6 +50182,11 @@ PrefabInstance:
     - target: {fileID: 1556555367167774549, guid: f9e60b0228b908a478033e9a030f4076,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556555369031421960, guid: f9e60b0228b908a478033e9a030f4076,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
