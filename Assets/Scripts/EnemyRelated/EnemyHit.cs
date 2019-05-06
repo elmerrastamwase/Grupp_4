@@ -25,7 +25,6 @@ public class EnemyHit : MonoBehaviour
         timer -= Time.deltaTime;
         if (Hp <= 0)
         {
-            Debug.Log("yeet");
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
         }
