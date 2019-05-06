@@ -188,8 +188,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31128201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.03, y: 0.05, z: -10}
+  m_LocalScale: {x: 0.024260426, y: 0.63691336, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1662,6 +1662,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 31128203}
+    - target: {fileID: 1556555369031421960, guid: f9e60b0228b908a478033e9a030f4076,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e60b0228b908a478033e9a030f4076, type: 3}
 --- !u!1001 &2666315251972858497
@@ -2468,12 +2473,12 @@ PrefabInstance:
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
@@ -2519,6 +2524,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.63691336
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9e0182f206cc245a69449786c0b681, type: 3}
