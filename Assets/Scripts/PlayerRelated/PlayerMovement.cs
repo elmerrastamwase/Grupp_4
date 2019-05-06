@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeTimer = jumpTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, (jumpForce * jumpTimeTimer));
             Dashing.hasAirdash = true;
-            ParticleSystem particle = Instantiate(bubles, transform.position + Vector3.down * 0.7f, bubles.transform.rotation);
+            ParticleSystem particle = Instantiate(bubles, transform.position + Vector3.down * 0.8f, bubles.transform.rotation);
             Destroy(particle, bubles.main.duration);
         }
         if (Input.GetButton("Jump") && isJumping == true)
