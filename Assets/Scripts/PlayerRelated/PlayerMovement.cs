@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform feetPos;
     public float checkRadius = 0.5f;
     public LayerMask whatIsGround;
-    public float jumpTime = 0.6f;
+    public float jumpTime = 1.2f;
     public static bool isJumping;
     public static bool isGrounded;
     private float jumpTimeTimer;
@@ -86,12 +86,6 @@ public class PlayerMovement : MonoBehaviour
         isTouchingRoof = Physics2D.OverlapCircle(headPos.position, checkRadius, whatIsGround);
     }
 
-    void tables()
-    {
-        transform.eulerAngles = new Vector3(90, 0, 0);
-    }
-    /*the tables have turned*/
-
 
     public void animations()
     {
@@ -120,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
             jumpTimeTimer = jumpTime;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, (jumpForce * jumpTimeTimer));
+            GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, (jumpForce / jumpTimeTimer));
             Dashing.hasAirdash = true;
             ParticleSystem particle = Instantiate(bubles, transform.position + Vector3.down * 0.8f, bubles.transform.rotation);
             Destroy(particle, bubles.main.duration);
@@ -130,11 +124,12 @@ public class PlayerMovement : MonoBehaviour
             if (jumpTimeTimer > 0)
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, jumpForce);
-                jumpTimeTimer -= Time.deltaTime;
+                jumpTimeTimer -= Time.deltaTime * 2;
             }
         }
-        if (Input.GetButtonUp("Jump") || isJumping == false || isTouchingRoof == true)
+        if (Input.GetButtonUp("Jump") && rbody.velocity.y > 0 )
         {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, -0f);
             isJumping = false;
         }
     }

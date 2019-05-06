@@ -34,15 +34,8 @@ public class EnemyHit : MonoBehaviour
         {
             rend.color = Color.red;
             flash -= Time.deltaTime;
-            if (bubles.isPlaying == false)
-            {
-                timer = 0.2f;
-                if (timer <= 0)
-                {
-                    ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
-                    Destroy(particle, bubles.main.duration);
-                }
-            }
+
+            
         }
         else
         {
@@ -58,6 +51,8 @@ public class EnemyHit : MonoBehaviour
             Hp -= 1;
             flash = .1f;
             SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
+            ParticleSystem particle = Instantiate(bubles, transform.position, bubles.transform.rotation);
+            Destroy(particle, bubles.main.duration);
             if (Hp <= 1)
             {
                 DeathSFX = Instantiate(DeathSFX, transform.position, DeathSFX.transform.rotation);
