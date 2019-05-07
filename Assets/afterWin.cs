@@ -14,5 +14,6 @@ public class afterWin : MonoBehaviour
     void Update()
     {
         gameWin.winGame = false;
+        Gamemaster.lastCheckPointPos = new Vector2(0, 0);
     }
 }
