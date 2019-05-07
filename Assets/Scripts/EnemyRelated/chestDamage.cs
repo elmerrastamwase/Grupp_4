@@ -25,6 +25,7 @@ public class chestDamage : MonoBehaviour
             Instantiate(DeathChest);
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
+            chesetCount.chestPoint += 1;
         }
 
         if (flash > 0)
