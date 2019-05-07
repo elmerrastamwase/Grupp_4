@@ -13,10 +13,10 @@ public class chesetCount : MonoBehaviour
 
     private void Start()
     {
+       
         if (hasTakenChest == true)
         {
             hasTakenChest = false;
-            chestPoint -= 1;
         }
     }
 
@@ -28,8 +28,11 @@ public class chesetCount : MonoBehaviour
                 hasTakenChest = true;
                 Destroy(collision.gameObject);
                 chestPoint += 1;
-                text.SetText($"{chestPoint} / 5");
                 SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
             }
+    }
+    private void Update()
+    {
+        text.SetText($"{chestPoint} / 5");
     }
 }
