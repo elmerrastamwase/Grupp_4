@@ -2583,9 +2583,9 @@ ParticleSystem:
     dampen: 0
     drag:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0.1
-      minScalar: 0
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
