@@ -61,7 +61,7 @@ public class chestTrap : MonoBehaviour
             {
                 anim.SetBool("hover", true);
 
-                if (!gun.active)
+                //if (!gun.active)
                     gun.SetActive(true);
 
 

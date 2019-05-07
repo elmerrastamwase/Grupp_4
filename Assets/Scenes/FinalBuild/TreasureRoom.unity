@@ -5955,7 +5955,7 @@ PrefabInstance:
     - target: {fileID: 5485512418557238372, guid: b18e9de3a22b214448fcb01b9545f90b,
         type: 3}
       propertyPath: m_Text
-      value: " Interact [ ^ ][ W ]\n    \n"
+      value: "\n\n    \n"
       objectReference: {fileID: 0}
     - target: {fileID: 5485512418557238372, guid: b18e9de3a22b214448fcb01b9545f90b,
         type: 3}

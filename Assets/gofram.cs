@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class afterWin : MonoBehaviour
+
+
+public class gofram : MonoBehaviour
 {
+    public float gospeed;
     // Start is called before the first frame update
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameWin.winGame = false;
-        Gamemaster.lastCheckPointPos = new Vector2(0, 0);
+        transform.Translate(0, 0, 0);
     }
 }
