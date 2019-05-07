@@ -200,27 +200,6 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 3773243165961786286}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &615714296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6239388682087662740, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1130949143}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &615714297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615714296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e5c6340bce86f4390a1f6a154bfae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BubbleOnHit: {fileID: 0}
-  DashBubble: {fileID: 0}
-  FlotingBubble: {fileID: 0}
 --- !u!1 &852133818
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +244,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1075685836 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8012648029256210355, guid: 5d9e0182f206cc245a69449786c0b681,
+    type: 3}
+  m_PrefabInstance: {fileID: 8012648030967446670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130949143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,19 +317,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5319967142715028317, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
+    - target: {fileID: 6239388682087662735, guid: b5e11e55c8b312b4f88cb1f91e546ba1,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2124734016, guid: b5e11e55c8b312b4f88cb1f91e546ba1, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2124734016, guid: b5e11e55c8b312b4f88cb1f91e546ba1, type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: bubles
+      value: 
+      objectReference: {fileID: 1075685836}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e11e55c8b312b4f88cb1f91e546ba1, type: 3}
 --- !u!1001 &1131888572
@@ -2205,12 +2182,12 @@ PrefabInstance:
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.26
+      value: -7.36
       objectReference: {fileID: 0}
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37
+      value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 8012648029256210352, guid: 5d9e0182f206cc245a69449786c0b681,
         type: 3}
