@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
     public void jumpScript()
     {
 
-        if (isGrounded == true && Input.GetButton("Jump"))
+        if (isGrounded == true && Input.GetButton("Jump") && isTouchingRoof == false)
         {
             isJumping = true;
             jumpTimeTimer = jumpTime;
@@ -151,6 +151,10 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(rbody.velocity.x, -0f);
             isJumping = false;
+        }
+        if (isTouchingRoof == true)
+        {
+            jumpTimeTimer = 0;
         }
     }
 }
