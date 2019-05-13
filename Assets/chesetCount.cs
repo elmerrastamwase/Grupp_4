@@ -13,11 +13,9 @@ public class chesetCount : MonoBehaviour
 
     private void Start()
     {
-       
-        if (hasTakenChest == true)
-        {
+     
             hasTakenChest = false;
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

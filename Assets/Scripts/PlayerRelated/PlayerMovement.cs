@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool isJumping;
     public static bool isGrounded;
     private float jumpTimeTimer;
-    public static int direction = 1;
+    public static int direction = 8;
     public Transform headPos;
     public bool isTouchingRoof;
     public static bool isWalkingLeft;
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = 1;
+        direction = 8;
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         transform.position = Gamemaster.lastCheckPointPos;
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (xMovement > 0.4)
             isWalkingRight = true;
         else isWalkingRight = false;
-
+        if (Dashing.isDashing == false)
         if (isWalkingLeft == true)
         {
             transf.rotation = Quaternion.Euler(0, 180f, 0);
