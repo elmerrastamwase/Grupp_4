@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Floating_Tile_Short_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 58158efa73f38da4e94f8855025c0cd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0fe0ae403073794495499177f16ba6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
