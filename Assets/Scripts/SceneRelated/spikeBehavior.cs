@@ -8,7 +8,7 @@ public class spikeBehavior : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            PlayerHP.playerHp -= 1;
+            PlayerHit.playerHp -= 1;
             PlayerHP.hasIFrames = true;
             collision.attachedRigidbody.velocity = new Vector3(10, 5, 0);
         }

@@ -28,7 +28,6 @@ public class LoadScene : MonoBehaviour
             }
             else
             {
-                PlayerHP.playerHp = 5;
                 dTimer = 10;
                 SceneManager.LoadScene(sceneToLoad);
             }

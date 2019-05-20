@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerHit : MonoBehaviour
 {
     public float hitstun;
+    public static int playerHp;
     public PlayerMovement playerM;
     public GameObject SFX;
     
     public void Awake()
     {
-       
+        playerHp = PlayerHPVariables.maxPlayerHp;
+
         playerM = GetComponent<PlayerMovement>();
     }
 
@@ -22,7 +24,7 @@ public class PlayerHit : MonoBehaviour
             if (PlayerHP.hasIFrames == false)
             {
                 SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
-                PlayerHP.playerHp -= 1;
+                playerHp -= 1;
                 PlayerHP.hasIFrames = true;
                 collision.attachedRigidbody.velocity = new Vector3(10, 5, 0);
                 hitstun = 0.5f;

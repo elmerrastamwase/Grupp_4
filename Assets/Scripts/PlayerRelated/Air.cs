@@ -22,7 +22,7 @@ public class Air : MonoBehaviour
         flash.enabled = false;
 
         darkness.color = new Color(1, 1, 1, 0 );
-        oldHp = PlayerHP.playerHp;
+        oldHp = PlayerHit.playerHp;
     }
 
     public void SetSize(float sizeNormalized)
@@ -33,12 +33,12 @@ public class Air : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (PlayerHP.playerHp < oldHp)
+        if (PlayerHit.playerHp < oldHp)
         {
             dTimer = 75;
 
         }
-          oldHp = PlayerHP.playerHp; 
+          oldHp = PlayerHit.playerHp; 
 
         bar.localScale = new Vector3(0.5f, air / 100f);
         if (air >= 100)
@@ -46,7 +46,7 @@ public class Air : MonoBehaviour
             flash.enabled = true;
             timer = 100;
             air = 0;
-            PlayerHP.playerHp += 1;
+            PlayerHit.playerHp += 1;
             SFX = Instantiate(SFX, transform.position, SFX.transform.rotation);
         }
         if (timer > 0)

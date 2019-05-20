@@ -16,7 +16,7 @@ public class devDisplayealth : MonoBehaviour
 
     void Update()
     {
-        healthDisplayed.text = PlayerHP.playerHp.ToString();
+        healthDisplayed.text = PlayerHit.playerHp.ToString();
 
         turnOnOffDisplay();
     }

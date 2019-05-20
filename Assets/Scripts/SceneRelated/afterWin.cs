@@ -16,7 +16,7 @@ public class afterWin : MonoBehaviour
         gameWin.winGame = false;
         Gamemaster.lastCheckPointPos = new Vector2(0, 0);
         chesetCount.chestPoint = 0;
-        PlayerHP.playerHp = 5;
+        PlayerHit.playerHp = 5;
         CD1.isTaken1 = false;
         CD1.isTaken2 = false;
         CD1.isTaken3 = false;

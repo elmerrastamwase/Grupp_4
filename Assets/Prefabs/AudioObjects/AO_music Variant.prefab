@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4256047547954301616, guid: f8b8a2a04ca3ee7449193d85023bc297,
         type: 3}
       propertyPath: m_Name
-      value: AO_music
+      value: AO_music Variant
       objectReference: {fileID: 0}
     - target: {fileID: 327382128262642283, guid: f8b8a2a04ca3ee7449193d85023bc297,
         type: 3}
@@ -72,5 +72,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac262b0bc58c77043aa957ab08ca7182, type: 3}
+    - target: {fileID: 2012492557211139606, guid: f8b8a2a04ca3ee7449193d85023bc297,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b8a2a04ca3ee7449193d85023bc297, type: 3}

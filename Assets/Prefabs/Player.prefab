@@ -6199,6 +6199,7 @@ GameObject:
   - component: {fileID: 377479587318283210}
   - component: {fileID: 560465868}
   - component: {fileID: 2099787568022843182}
+  - component: {fileID: 2908442746964674717}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -6225,7 +6226,7 @@ Transform:
   - {fileID: 2536271427473024666}
   - {fileID: 5319967142715028319}
   - {fileID: 8764966695944460407}
-  - {fileID: 7663852193650362774}
+  - {fileID: 1892572818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6477,6 +6478,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFX: {fileID: 4347632159040179137, guid: b75ff3e11c7f4fb4ea07832dc60a7db3, type: 3}
   text: {fileID: 2124734016}
+--- !u!114 &2908442746964674717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6239388682087662740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e9ea103228d7c4f8f221cb58e37e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6984569244000330042
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,7 +7174,7 @@ PrefabInstance:
       objectReference: {fileID: 1348723958}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19636cfa62f20ac44b7dba424385511c, type: 3}
---- !u!4 &7663852193650362774 stripped
+--- !u!4 &1892572818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7663852194989250345, guid: 19636cfa62f20ac44b7dba424385511c,
     type: 3}

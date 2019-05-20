@@ -23,7 +23,7 @@ public class playerDeath : MonoBehaviour
 
     void Update()
     {
-        if (PlayerHP.playerHp <= 0)
+        if (PlayerHit.playerHp <= 0)
         {
             deadPlayer.enabled = true;
             if (dTimer > 0)
@@ -33,7 +33,7 @@ public class playerDeath : MonoBehaviour
             }
             else
             {
-                PlayerHP.playerHp = 5;
+                PlayerHit.playerHp = 5;
                 dTimer = 75;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

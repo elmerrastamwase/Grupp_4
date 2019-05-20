@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
-    public static int maxPlayerHp = 5;
-    public static int playerHp;
     public static bool hasIFrames;
     public float iFrames = 2;
     private Gamemaster gm;
@@ -16,8 +14,11 @@ public class PlayerHP : MonoBehaviour
     public Sprite emptyTank;
     public SpriteRenderer player;
     public GameObject deadPlayer;
+    //public static int sceneHP;
 
-    public void Start()
+
+
+    private void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -25,17 +26,18 @@ public class PlayerHP : MonoBehaviour
 
         if (currentSceneName == "Tutorial")
         {
-            playerHp = maxPlayerHp;
+            PlayerHit.playerHp = PlayerHPVariables.maxPlayerHp;
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (playerHp > maxPlayerHp)
+        if (PlayerHit.playerHp > PlayerHPVariables.maxPlayerHp)
         {
-            playerHp = maxPlayerHp;
+            PlayerHit.playerHp = PlayerHPVariables.maxPlayerHp;
         }
 
         if (hasIFrames == true)
@@ -49,7 +51,7 @@ public class PlayerHP : MonoBehaviour
         }
         for (int i = 0; i < tanks.Length; i++)
         {
-            if (i < playerHp)
+            if (i < PlayerHit.playerHp)
             {
                 tanks[i].sprite = fullTank;
             }
@@ -58,7 +60,7 @@ public class PlayerHP : MonoBehaviour
                 tanks[i].sprite = emptyTank;
             }
 
-            if (i < maxPlayerHp)
+            if (i < PlayerHPVariables.maxPlayerHp)
             {
                 tanks[i].enabled = true;
             }
@@ -67,7 +69,7 @@ public class PlayerHP : MonoBehaviour
                 tanks[i].enabled = false;
             }
         }
-        if (playerHp <= 0)
+        if (PlayerHit.playerHp <= 0)
         {
             deadPlayer = Instantiate(deadPlayer, transform.position, deadPlayer.transform.rotation);
             Destroy(gameObject);
