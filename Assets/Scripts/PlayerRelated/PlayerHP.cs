@@ -16,19 +16,16 @@ public class PlayerHP : MonoBehaviour
     public GameObject deadPlayer;
     //public static int sceneHP;
 
-
-
     private void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
-        string currentSceneName = currentScene.name;
+        int currentSceneBuild = currentScene.buildIndex;
 
-        if (currentSceneName == "Tutorial")
+        if (currentSceneBuild == 2)
         {
             PlayerHit.playerHp = PlayerHPVariables.maxPlayerHp;
         }
-
     }
 
     // Update is called once per frame

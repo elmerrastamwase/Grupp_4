@@ -38,7 +38,8 @@ public class Air : MonoBehaviour
             dTimer = 75;
 
         }
-          oldHp = PlayerHit.playerHp; 
+
+        oldHp = PlayerHit.playerHp;
 
         bar.localScale = new Vector3(0.5f, air / 100f);
         if (air >= 100)

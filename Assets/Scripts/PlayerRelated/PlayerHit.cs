@@ -11,7 +11,7 @@ public class PlayerHit : MonoBehaviour
     
     public void Awake()
     {
-        playerHp = PlayerHPVariables.maxPlayerHp;
+        //playerHp = PlayerHPVariables.maxPlayerHp;
 
         playerM = GetComponent<PlayerMovement>();
     }
